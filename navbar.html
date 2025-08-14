@@ -1,0 +1,34 @@
+<!-- navbar.html -->
+<header class="fixed w-full z-50 transition-all duration-300 bg-white" id="navbar">
+  <div class="w-full mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a class="inline-block group flex-shrink-0" href="index.html">
+        <div class="flex items-center space-x-3">
+          <div class="rounded-none overflow-hidden">
+            <img src="assets/rapipack.png" alt="Logo" class="h-16 object-contain">
+          </div>
+        </div>
+      </a>
+
+      <!-- Links + Language buttons -->
+      <div class="flex items-center space-x-6">
+        <ul class="nav-links hidden lg:flex items-center space-x-8">
+          <li><a class="text-brand-navy hover:text-brand-blue font-semibold" href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a class="text-brand-navy hover:text-brand-blue font-semibold" href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a class="text-brand-navy hover:text-brand-blue font-semibold" href="product.html" data-i18n="nav.products">Products</a></li>
+          <li><a class="text-brand-navy hover:text-brand-blue font-semibold" href="certificates.html" data-i18n="nav.certification">Certification</a></li>
+          <li><a class="text-brand-navy hover:text-brand-blue font-semibold" href="machinery.html" data-i18n="nav.technology">Technology</a></li>
+          <li><a class="text-brand-navy hover:text-brand-blue font-semibold" href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+
+        <!-- Language: three simple buttons -->
+        <div class="hidden lg:flex items-center gap-2" id="langButtons">
+          <button class="lang-btn px-3 py-1 border text-sm" data-lang="en">EN</button>
+          <button class="lang-btn px-3 py-1 border text-sm" data-lang="id">ID</button>
+          <button class="lang-btn px-3 py-1 border text-sm" data-lang="zh">中文</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Rapipack Asritama</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="navbar.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+ <style>
+    .glass-effect {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Background image with transparent blue overlay */
+    .bg-cover-overlay {
+      background-image: url('assets/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0.5); /* Transparent blue overlay */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .bg-cover-overlay2 {
+      background-image: url('assets/factory.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay2 {
+      background: rgba(96, 99, 114, 0.702); /* Transparent blue overlay */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="bg-brand-cream">
+
+  <!-- Placeholder for Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section id="about" class=" py-40 bg-cover bg-center bg-cover-overlay2 relative overflow-hidden">
+        <div class="absolute inset-0 bg-overlay2 z-10"></div>
+
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+            About 
+            <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
+                Our Story
+            </span>
+        </h1>
+        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            We are pioneers in packaging solutions, committed to providing innovative, sustainable products for over 25 years.
+        </p>
+        <button class="bg-gradient-to-r from-brand-navy to-brand-blue text-white font-semibold px-8 py-3 text-lg shadow-md hover:bg-brand-blue/80">
+            Discover Our Journey
+        </button>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/20 blur-xl"></div>
+    <div class="absolute bottom-20 right-20 w-32 h-32 bg-brand-red/20 blur-xl"></div>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="bg-brand-navy text-white py-12 text-center">
+    <p>&copy; PT. Rapipack Asritama | Part of SCG Packaging</p>
+  </footer>
+
+</body>
+</html>

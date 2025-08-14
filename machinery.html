@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Technology - PT. Rapipack Asritama</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="navbar.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-cover-overlay {
+      background-image: url('assets/factory3.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay {
+      background: rgba(32, 31, 124, 0.8);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .fade-in-up-observer {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in-up-observer.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-brand-cream">
+
+  <!-- Placeholder for Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section class="py-40 bg-cover bg-center bg-cover-overlay relative overflow-hidden">
+    <div class="absolute inset-0 bg-overlay z-10"></div>
+
+    <div class="container mx-auto px-6 text-center relative z-20">
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+        <span data-i18n="tech.hero.our">Our</span> 
+        <span data-i18n="tech.hero.title" class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
+          Technology
+        </span>
+      </h1>
+      <p data-i18n="tech.hero.subtitle" class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Advanced machinery and automation delivering precision, efficiency, and exceptional quality at scale
+      </p>
+    </div>
+  </section>
+
+  <!-- Technology Overview -->
+  <section class="py-20 bg-gray-50 relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center fade-in-up-observer">
+        <p data-i18n="tech.overview.description" class="text-lg text-gray-700 leading-relaxed mb-8">
+          At our packaging facility, we invest in advanced technology to ensure precision, efficiency, and consistent quality for every project. Our machines are selected not just for their speed and capacity, but for their ability to deliver exceptional results at scale.
+        </p>
+        <div class="w-24 h-1 bg-brand-navy mx-auto"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corrugators Section -->
+  <section class="py-20 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image Left -->
+        <div class="fade-in-up-observer">
+          <div class="bg-gray-200 overflow-hidden">
+            <img src="assets/corrugator-machine.jpg" 
+                 alt="High-Speed Corrugator Machine" 
+                 class="w-full h-80 object-cover transition-transform duration-700 hover:scale-105"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="hidden w-full h-80 bg-gray-300 items-center justify-center">
+              <div class="text-center p-6">
+                <div class="w-32 h-20 mx-auto mb-4 bg-gray-400 flex items-center justify-center">
+                  <span class="text-white font-semibold text-sm">IMAGE</span>
+                </div>
+                <p data-i18n="tech.corrugators.image_alt" class="text-lg font-semibold text-gray-600">Corrugator Machine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Right -->
+        <div class="fade-in-up-observer">
+          <h2 data-i18n="tech.corrugators.title" class="text-4xl font-bold text-brand-navy mb-6">
+            High-Speed Corrugators
+          </h2>
+          <p data-i18n="tech.corrugators.description" class="text-gray-600 text-lg mb-8 leading-relaxed">
+            Our high-speed corrugators produce strong, uniform boards at impressive volumes, enabling us to meet large-scale orders with short lead times.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="bg-brand-cream p-6 border-l-4 border-brand-orange">
+              <h3 data-i18n="tech.corrugators.machine1_name" class="text-xl font-bold text-brand-navy mb-2">Corrugator #2</h3>
+              <p data-i18n="tech.corrugators.machine1_brand" class="text-gray-600 mb-3">Uchida / MHI / BHS / HH</p>
+              <div class="grid grid-cols-3 gap-4 text-sm">
+                <div class="text-center">
+                  <div class="font-bold text-brand-navy">2.2m</div>
+                  <div data-i18n="tech.corrugators.width_label" class="text-gray-500">Width</div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-brand-navy">180m/min</div>
+                  <div data-i18n="tech.corrugators.speed_label" class="text-gray-500">Speed</div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-brand-navy">40K tons</div>
+                  <div data-i18n="tech.corrugators.capacity_label" class="text-gray-500">Per Year</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-brand-cream p-6 border-l-4 border-brand-red">
+              <h3 data-i18n="tech.corrugators.machine2_name" class="text-xl font-bold text-brand-navy mb-2">Corrugator #3</h3>
+              <p data-i18n="tech.corrugators.machine2_brand" class="text-gray-600 mb-3">Hsie Hsu</p>
+              <div class="grid grid-cols-3 gap-4 text-sm">
+                <div class="text-center">
+                  <div class="font-bold text-brand-navy">2.5m</div>
+                  <div data-i18n="tech.corrugators.width_label" class="text-gray-500">Width</div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-brand-navy">250m/min</div>
+                  <div data-i18n="tech.corrugators.speed_label" class="text-gray-500">Speed</div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-brand-navy">63K tons</div>
+                  <div data-i18n="tech.corrugators.capacity_label" class="text-gray-500">Per Year</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Printers Section -->
+  <section class="py-20 bg-gray-50 relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content Left -->
+        <div class="fade-in-up-observer lg:order-1">
+          <h2 data-i18n="tech.printers.title" class="text-4xl font-bold text-brand-navy mb-6">
+            Flexo Printing Excellence
+          </h2>
+          <p data-i18n="tech.printers.description" class="text-gray-600 text-lg mb-8 leading-relaxed">
+            Featuring 7 high-performance flexo printing machines, we deliver vibrant, consistent prints with capacities exceeding 74,000 tons/year. These machines allow us to print faster without compromising detail, ensuring your packaging stands out.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6">
+              <h3 data-i18n="tech.printers.machine1_name" class="text-lg font-bold text-brand-navy mb-2">Lian Tiee Flexo</h3>
+              <p data-i18n="tech.printers.machine1_description" class="text-gray-600 text-sm mb-3">Advanced flexographic printing</p>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-green-500 mr-2"></div>
+                <span data-i18n="tech.printers.machine1_status" class="text-sm font-medium text-green-700">High Performance</span>
+              </div>
+            </div>
+            <div class="bg-white p-6">
+              <h3 data-i18n="tech.printers.machine2_name" class="text-lg font-bold text-brand-navy mb-2">Tien Chin Yu</h3>
+              <p data-i18n="tech.printers.machine2_description" class="text-gray-600 text-sm mb-3">Precision printing technology</p>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-green-500 mr-2"></div>
+                <span data-i18n="tech.printers.machine2_status" class="text-sm font-medium text-green-700">Active</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-brand-cream p-6 border border-brand-orange">
+            <div class="text-center">
+              <div class="text-3xl font-black text-brand-navy mb-2">74,000+</div>
+              <div data-i18n="tech.printers.capacity_label" class="text-gray-600 font-medium">Tons Per Year Capacity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Right -->
+        <div class="fade-in-up-observer lg:order-2">
+          <div class="bg-gray-200 overflow-hidden">
+            <img src="assets/printing-machine.jpg" 
+                 alt="Flexographic Printing Machine" 
+                 class="w-full h-80 object-cover transition-transform duration-700 hover:scale-105"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="hidden w-full h-80 bg-gray-300 items-center justify-center">
+              <div class="text-center p-6">
+                <div class="w-32 h-20 mx-auto mb-4 bg-gray-400 flex items-center justify-center">
+                  <span class="text-white font-semibold text-sm">IMAGE</span>
+                </div>
+                <p data-i18n="tech.printers.image_alt" class="text-lg font-semibold text-gray-600">Printing Machine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flatbed Diecut Section -->
+  <section class="py-20 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image Left -->
+        <div class="fade-in-up-observer">
+          <div class="bg-gray-200 overflow-hidden">
+            <img src="assets/diecut-machine.jpg" 
+                 alt="Flatbed Diecut Machine" 
+                 class="w-full h-80 object-cover transition-transform duration-700 hover:scale-105"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="hidden w-full h-80 bg-gray-300 items-center justify-center">
+              <div class="text-center p-6">
+                <div class="w-32 h-20 mx-auto mb-4 bg-gray-400 flex items-center justify-center">
+                  <span class="text-white font-semibold text-sm">IMAGE</span>
+                </div>
+                <p data-i18n="tech.diecut.image_alt" class="text-lg font-semibold text-gray-600">Diecut Machine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Right -->
+        <div class="fade-in-up-observer">
+          <h2 data-i18n="tech.diecut.title" class="text-4xl font-bold text-brand-navy mb-6">
+            Precision Flatbed Diecut
+          </h2>
+          <p data-i18n="tech.diecut.description" class="text-gray-600 text-lg mb-8 leading-relaxed">
+            Our diecutters ensure precise, clean cuts for any design — from standard boxes to custom shapes — maximizing accuracy and reducing waste.
+          </p>
+          
+          <div class="bg-brand-cream p-8 border-l-4 border-brand-blue">
+            <h3 data-i18n="tech.diecut.machine_name" class="text-2xl font-bold text-brand-navy mb-4">ETERNA EP1600</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <div class="text-3xl font-black text-brand-navy mb-2">2 Units</div>
+                <p data-i18n="tech.diecut.units_label" class="text-gray-600">High-precision machines</p>
+              </div>
+              <div>
+                <div class="text-3xl font-black text-brand-navy mb-2">9,000</div>
+                <p data-i18n="tech.diecut.capacity_description" class="text-gray-600">Tons/year capacity</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span data-i18n="tech.diecut.feature1" class="px-4 py-2 bg-gray-100 text-brand-navy text-sm font-medium">Precise Cutting</span>
+            <span data-i18n="tech.diecut.feature2" class="px-4 py-2 bg-gray-100 text-brand-navy text-sm font-medium">Custom Shapes</span>
+            <span data-i18n="tech.diecut.feature3" class="px-4 py-2 bg-gray-100 text-brand-navy text-sm font-medium">Waste Reduction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation Section -->
+  <section class="py-20 bg-gray-50 relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content Left -->
+        <div class="fade-in-up-observer lg:order-1">
+          <h2 data-i18n="tech.automation.title" class="text-4xl font-bold text-brand-navy mb-6">
+            Advanced Automation
+          </h2>
+          
+          <div class="space-y-8 mb-8">
+            <div class="bg-white p-6">
+              <h3 data-i18n="tech.automation.machine1_name" class="text-xl font-bold text-brand-navy mb-3">Automatic Mini Folder Gluer</h3>
+              <p data-i18n="tech.automation.machine1_description" class="text-gray-600 leading-relaxed mb-4">
+                Perfect for small-format packaging, this high-speed machine folds and glues with precision, boosting productivity for compact, intricate designs.
+              </p>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-green-500 mr-2"></div>
+                <span data-i18n="tech.automation.machine1_status" class="text-sm font-medium text-green-700">High-Speed Precision</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-6">
+              <h3 data-i18n="tech.automation.machine2_name" class="text-xl font-bold text-brand-navy mb-3">Robotic Palletizer</h3>
+              <p data-i18n="tech.automation.machine2_description" class="text-gray-600 leading-relaxed mb-4">
+                Our fully automated robotic palletizing system ensures faster, safer, and more consistent stacking, reducing manual handling and increasing operational efficiency.
+              </p>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-blue-500 mr-2"></div>
+                <span data-i18n="tech.automation.machine2_status" class="text-sm font-medium text-blue-700">Fully Automated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Right -->
+        <div class="fade-in-up-observer lg:order-2">
+          <div class="bg-gray-200 overflow-hidden">
+            <img src="assets/robotic-palletizer.jpg" 
+                 alt="Robotic Automation System" 
+                 class="w-full h-80 object-cover transition-transform duration-700 hover:scale-105"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="hidden w-full h-80 bg-gray-300 items-center justify-center">
+              <div class="text-center p-6">
+                <div class="w-32 h-20 mx-auto mb-4 bg-gray-400 flex items-center justify-center">
+                  <span class="text-white font-semibold text-sm">IMAGE</span>
+                </div>
+                <p data-i18n="tech.automation.image_alt" class="text-lg font-semibold text-gray-600">Automation System</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer Section -->
+  <footer class="bg-brand-navy text-white py-12 text-center">
+    <p>&copy; PT. Rapipack Asritama | Part of SCG Packaging</p>
+  </footer>
+
+   <!-- Translations -->
+<script>
+(() => {
+  const DEFAULT_LANG = 'en';
+  let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+
+  // 1) Translations library (keep/edit here in your page)
+const t = {
+  en: {
+    // Hero
+    'tech.hero.our': 'Our',
+    'tech.hero.title': 'Technology',
+    'tech.hero.subtitle': 'Advanced machinery and automation delivering precision, efficiency, and exceptional quality at scale',
+
+    // Overview
+    'tech.overview.description': 'At our packaging facility, we invest in advanced technology to ensure precision, efficiency, and consistent quality for every project. Our machines are selected not just for their speed and capacity, but for their ability to deliver exceptional results at scale.',
+
+    // Corrugators
+    'tech.corrugators.image_alt': 'Corrugator Machine',
+    'tech.corrugators.title': 'High-Speed Corrugators',
+    'tech.corrugators.description': 'Our high-speed corrugators produce strong, uniform boards at impressive volumes, enabling us to meet large-scale orders with short lead times.',
+    'tech.corrugators.machine1_name': 'Corrugator #2',
+    'tech.corrugators.machine1_brand': 'Uchida / MHI / BHS / HH',
+    'tech.corrugators.width_label': 'Width',
+    'tech.corrugators.speed_label': 'Speed',
+    'tech.corrugators.capacity_label': 'Per Year',
+    'tech.corrugators.machine2_name': 'Corrugator #3',
+    'tech.corrugators.machine2_brand': 'Hsie Hsu',
+
+    // Printers
+    'tech.printers.title': 'Flexo Printing Excellence',
+    'tech.printers.description': 'Featuring 7 high-performance flexo printing machines, we deliver vibrant, consistent prints with capacities exceeding 74,000 tons/year. These machines allow us to print faster without compromising detail, ensuring your packaging stands out.',
+    'tech.printers.machine1_name': 'Lian Tiee Flexo',
+    'tech.printers.machine1_description': 'Advanced flexographic printing',
+    'tech.printers.machine1_status': 'High Performance',
+    'tech.printers.machine2_name': 'Tien Chin Yu',
+    'tech.printers.machine2_description': 'Precision printing technology',
+    'tech.printers.machine2_status': 'Active',
+    'tech.printers.capacity_label': 'Tons Per Year Capacity',
+    'tech.printers.image_alt': 'Printing Machine',
+
+    // Diecut
+    'tech.diecut.image_alt': 'Diecut Machine',
+    'tech.diecut.title': 'Precision Flatbed Diecut',
+    'tech.diecut.description': 'Our diecutters ensure precise, clean cuts for any design — from standard boxes to custom shapes — maximizing accuracy and reducing waste.',
+    'tech.diecut.machine_name': 'ETERNA EP1600',
+    'tech.diecut.units_label': 'High-precision machines',
+    'tech.diecut.capacity_description': 'Tons/year capacity',
+    'tech.diecut.feature1': 'Precise Cutting',
+    'tech.diecut.feature2': 'Custom Shapes',
+    'tech.diecut.feature3': 'Waste Reduction',
+
+    // Automation
+    'tech.automation.title': 'Advanced Automation',
+    'tech.automation.machine1_name': 'Automatic Mini Folder Gluer',
+    'tech.automation.machine1_description': 'Perfect for small-format packaging, this high-speed machine folds and glues with precision, boosting productivity for compact, intricate designs.',
+    'tech.automation.machine1_status': 'High-Speed Precision',
+    'tech.automation.machine2_name': 'Robotic Palletizer',
+    'tech.automation.machine2_description': 'Our fully automated robotic palletizing system ensures faster, safer, and more consistent stacking, reducing manual handling and increasing operational efficiency.',
+    'tech.automation.machine2_status': 'Fully Automated',
+    'tech.automation.image_alt': 'Automation System',
+  },
+
+  id: {
+    // Hero
+    'tech.hero.our': 'Teknologi',
+    'tech.hero.title': 'Kami',
+    'tech.hero.subtitle': 'Mesin canggih dan otomasi yang menghadirkan presisi, efisiensi, dan kualitas luar biasa dalam skala besar',
+
+    // Overview
+    'tech.overview.description': 'Di fasilitas kemasan kami, kami berinvestasi pada teknologi terdepan untuk memastikan presisi, efisiensi, dan kualitas yang konsisten pada setiap proyek. Mesin kami dipilih bukan hanya karena kecepatan dan kapasitasnya, tetapi karena kemampuannya menghasilkan hasil unggul dalam skala besar.',
+
+    // Corrugators
+    'tech.corrugators.image_alt': 'Mesin Corrugator',
+    'tech.corrugators.title': 'Corrugator Berkecepatan Tinggi',
+    'tech.corrugators.description': 'Corrugator berkecepatan tinggi kami menghasilkan lembaran yang kuat dan seragam dengan volume impresif, memungkinkan kami memenuhi pesanan skala besar dengan lead time singkat.',
+    'tech.corrugators.machine1_name': 'Corrugator #2',
+    'tech.corrugators.machine1_brand': 'Uchida / MHI / BHS / HH',
+    'tech.corrugators.width_label': 'Lebar',
+    'tech.corrugators.speed_label': 'Kecepatan',
+    'tech.corrugators.capacity_label': 'Per Tahun',
+    'tech.corrugators.machine2_name': 'Corrugator #3',
+    'tech.corrugators.machine2_brand': 'Hsie Hsu',
+
+    // Printers
+    'tech.printers.title': 'Keunggulan Cetak Flexo',
+    'tech.printers.description': 'Dengan 7 mesin cetak flexo berperforma tinggi, kami menghadirkan hasil cetak cerah dan konsisten dengan kapasitas lebih dari 74.000 ton/tahun. Mesin‑mesin ini memungkinkan pencetakan lebih cepat tanpa mengorbankan detail, memastikan kemasan Anda menonjol.',
+    'tech.printers.machine1_name': 'Lian Tiee Flexo',
+    'tech.printers.machine1_description': 'Pencetakan fleksografis tingkat lanjut',
+    'tech.printers.machine1_status': 'Performa Tinggi',
+    'tech.printers.machine2_name': 'Tien Chin Yu',
+    'tech.printers.machine2_description': 'Teknologi cetak presisi',
+    'tech.printers.machine2_status': 'Aktif',
+    'tech.printers.capacity_label': 'Kapasitas Ton/Tahun',
+    'tech.printers.image_alt': 'Mesin Cetak',
+
+    // Diecut
+    'tech.diecut.image_alt': 'Mesin Diecut',
+    'tech.diecut.title': 'Flatbed Diecut Presisi',
+    'tech.diecut.description': 'Mesin diecut kami memastikan potongan yang presisi dan bersih untuk desain apa pun — dari kotak standar hingga bentuk kustom — memaksimalkan akurasi dan mengurangi limbah.',
+    'tech.diecut.machine_name': 'ETERNA EP1600',
+    'tech.diecut.units_label': 'Mesin berpresisi tinggi',
+    'tech.diecut.capacity_description': 'Kapasitas ton/tahun',
+    'tech.diecut.feature1': 'Potong Presisi',
+    'tech.diecut.feature2': 'Bentuk Kustom',
+    'tech.diecut.feature3': 'Pengurangan Limbah',
+
+    // Automation
+    'tech.automation.title': 'Otomasi Tingkat Lanjut',
+    'tech.automation.machine1_name': 'Automatic Mini Folder Gluer',
+    'tech.automation.machine1_description': 'Sempurna untuk kemasan format kecil, mesin berkecepatan tinggi ini melipat dan mengelem dengan presisi, meningkatkan produktivitas untuk desain yang ringkas dan rumit.',
+    'tech.automation.machine1_status': 'Presisi Berkecepatan Tinggi',
+    'tech.automation.machine2_name': 'Robotic Palletizer',
+    'tech.automation.machine2_description': 'Sistem palletizing robotik yang sepenuhnya otomatis ini memastikan penumpukan lebih cepat, aman, dan konsisten, mengurangi pekerjaan manual serta meningkatkan efisiensi operasional.',
+    'tech.automation.machine2_status': 'Sepenuhnya Otomatis',
+    'tech.automation.image_alt': 'Sistem Otomasi',
+  },
+
+  zh: {
+    // Hero
+    'tech.hero.our': '我们的',
+    'tech.hero.title': '技术',
+    'tech.hero.subtitle': '先进的机械与自动化，实现大规模的高精度、高效率与卓越品质',
+
+    // Overview
+    'tech.overview.description': '在我们的包装工厂，我们持续投入先进技术，以确保每个项目都具备精度、效率与稳定的品质。我们选择的设备不仅追求速度与产能，更重视在大规模生产中依然能够输出出色结果的能力。',
+
+    // Corrugators
+    'tech.corrugators.image_alt': '瓦楞纸板生产机',
+    'tech.corrugators.title': '高速瓦楞纸生产线',
+    'tech.corrugators.description': '我们的高速瓦楞纸生产线可在高产量下生产坚固且一致的纸板，满足大批量订单并缩短交期。',
+    'tech.corrugators.machine1_name': 'Corrugator #2',
+    'tech.corrugators.machine1_brand': 'Uchida / MHI / BHS / HH',
+    'tech.corrugators.width_label': '宽度',
+    'tech.corrugators.speed_label': '速度',
+    'tech.corrugators.capacity_label': '每年',
+    'tech.corrugators.machine2_name': 'Corrugator #3',
+    'tech.corrugators.machine2_brand': 'Hsie Hsu',
+
+    // Printers
+    'tech.printers.title': '卓越柔版印刷',
+    'tech.printers.description': '配备 7 台高性能柔版印刷机，我们可在年产能超过 74,000 吨的前提下实现色彩鲜明且一致的印刷效果。设备在不牺牲细节的情况下提升速度，确保您的包装更加出众。',
+    'tech.printers.machine1_name': 'Lian Tiee 柔印',
+    'tech.printers.machine1_description': '先进的柔版印刷技术',
+    'tech.printers.machine1_status': '高性能',
+    'tech.printers.machine2_name': 'Tien Chin Yu',
+    'tech.printers.machine2_description': '精密印刷技术',
+    'tech.printers.machine2_status': '运行中',
+    'tech.printers.capacity_label': '年度产能（吨）',
+    'tech.printers.image_alt': '印刷设备',
+
+    // Diecut
+    'tech.diecut.image_alt': '模切机',
+    'tech.diecut.title': '高精度平压模切',
+    'tech.diecut.description': '我们的模切设备可为任何设计提供精确、干净的切口——从标准纸箱到定制外形——最大化精度并减少浪费。',
+    'tech.diecut.machine_name': 'ETERNA EP1600',
+    'tech.diecut.units_label': '高精度设备',
+    'tech.diecut.capacity_description': '年产能（吨）',
+    'tech.diecut.feature1': '精准切割',
+    'tech.diecut.feature2': '定制外形',
+    'tech.diecut.feature3': '减少浪费',
+
+    // Automation
+    'tech.automation.title': '先进自动化',
+    'tech.automation.machine1_name': '自动迷你折叠糊盒机',
+    'tech.automation.machine1_description': '适用于小规格包装，此高速设备可精准折叠与糊盒，显著提升复杂小尺寸设计的产能。',
+    'tech.automation.machine1_status': '高速高精度',
+    'tech.automation.machine2_name': '机器人码垛机',
+    'tech.automation.machine2_description': '全自动机器人码垛系统实现更快、更安全且更一致的堆垛，减少人工搬运并提升运营效率。',
+    'tech.automation.machine2_status': '全自动',
+    'tech.automation.image_alt': '自动化系统',
+  }
+};
+
+  // 2) Swap texts for all [data-i18n] (supports HTML)
+  function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t[currentLang]?.[key];
+      if (typeof val === 'string') el.innerHTML = val;
+    });
+    // highlight active lang button if present
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const active = btn.dataset.lang === currentLang;
+      btn.classList.toggle('ring-2', active);
+      btn.classList.toggle('ring-brand-blue', active);
+    });
+  }
+
+  // 3) Change language (persist to localStorage)
+  function setLang(lang) {
+    if (!t[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    applyTranslations();
+  }
+
+  // 4) Load navbar.html, then wire the 3 buttons
+  async function loadNavbar() {
+    const host = document.getElementById('navbar-container');
+    if (!host) return;
+    const res = await fetch('navbar.html', { cache: 'no-cache' });
+    host.innerHTML = await res.text();
+
+    // Event delegation: handle clicks on EN/ID/中文 buttons
+    host.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-btn');
+      if (btn && btn.dataset.lang) setLang(btn.dataset.lang);
+    });
+
+    // After navbar is in the DOM, apply current language to nav labels
+    applyTranslations();
+  }
+
+  // 5) Init
+  window.addEventListener('DOMContentLoaded', async () => {
+    await loadNavbar();
+    applyTranslations(); // translate rest of the page content
+  });
+})();
+</script>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in-up-observer');
+      fadeElements.forEach(el => observer.observe(el));
+    });
+
+    // Load navbar
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof loadNavbar === 'function') {
+        loadNavbar();
+      }
+    });
+  </script>
+
+</body>
+</html>

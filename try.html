@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --brand-navy: #1e293b;
+            --brand-cream: #fef7cd;
+            --brand-orange: #fb923c;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-orange), #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(30, 41, 59, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 400px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(30, 41, 59, 0.15);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-carousel {
+            height: 450px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-carousel .swiper-slide {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Custom Swiper Navigation */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px !important;
+            height: 50px !important;
+            background: none !important;
+            border: 2px solid var(--brand-navy) !important;
+            border-radius: 50% !important;
+            color: var(--brand-navy) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px !important;
+            font-weight: bold !important;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: var(--brand-navy) !important;
+            color: white !important;
+            transform: scale(1.05);
+        }
+
+        .swiper-button-disabled {
+            opacity: 0.3 !important;
+        }
+
+        /* Custom Swiper Pagination */
+        .swiper-pagination-bullet {
+            width: 12px !important;
+            height: 12px !important;
+            background: var(--brand-navy) !important;
+            opacity: 0.3 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            transform: scale(1.2);
+            background: var(--brand-orange) !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-card {
+                height: auto;
+            }
+            
+            .product-card .flex {
+                flex-direction: column;
+            }
+            
+            .product-card .w-1\/3,
+            .product-card .w-2\/3 {
+                width: 100%;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Products Section -->
+    <section id="products" class="py-8 bg-gradient-to-br from-white to-brand-cream min-h-screen flex flex-col">
+        <div class="container mx-auto px-6 lg:px-12 flex-1 flex flex-col">
+            <div class="text-center mb-6">
+                <h2 data-i18n="product.product.title" class="text-3xl md:text-4xl font-black text-brand-navy mb-3 animate-fade-in-up">
+                    Our <span class="text-gradient">Expertise</span>
+                </h2>
+                <p data-i18n="product.product.subtitle" class="text-base md:text-lg text-brand-navy/70 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+                    From premium shipping solutions to cutting-edge custom packaging, we deliver excellence across our comprehensive product range.
+                </p>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper product-carousel flex-1 animate-scale-in" style="animation-delay: 0.4s;">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="flex items-stretch h-full">
+                                <!-- Image Section (Left 1/3) -->
+                                <div class="w-1/3 product-image">
+                                    <img src="assets/product1.png" alt="Premium Shipping Boxes">
+                                </div>
+                                
+                                <!-- Content Section (Right 2/3) -->
+                                <div class="w-2/3 product-content">
+                                    <div class="mb-4">
+                                        <span data-i18n="product.product.highlight1" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Premium Quality</span>
+                                    </div>
+                                    <h3 data-i18n="product.product.title1" class="text-3xl lg:text-4xl font-bold text-brand-navy mb-6">Sheet Board</h3>
+                                    <p data-i18n="product.product.desc1" class="text-lg lg:text-xl text-brand-navy/70 leading-relaxed">
+                                        Durable and versatile corrugated sheet boards available in various sizes and thicknesses — ideal for custom packaging, inserts, and protective layers.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="flex items-stretch h-full">
+                                <!-- Image Section (Left 1/3) -->
+                                <div class="w-1/3 product-image">
+                                    <img src="assets/product2.png" alt="Rigid Packaging Boxes">
+                                </div>
+                                
+                                <!-- Content Section (Right 2/3) -->
+                                <div class="w-2/3 product-content">
+                                    <div class="mb-4">
+                                        <span data-i18n="product.product.highlight2" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Luxury Grade</span>
+                                    </div>
+                                    <h3 data-i18n="product.product.title2" class="text-3xl lg:text-4xl font-bold text-brand-navy mb-6">Blank Box</h3>
+                                    <p data-i18n="product.product.caption2" class="text-lg lg:text-xl text-brand-navy/70 leading-relaxed">
+                                       High-quality plain carton boxes for general packaging needs. Strong, reliable, and perfect for storage, shipping, or custom branding.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="flex items-stretch h-full">
+                                <!-- Image Section (Left 1/3) -->
+                                <div class="w-1/3 product-image">
+                                    <img src="assets/product3.png" alt="Flexible Packaging">
+                                </div>
+                                
+                                <!-- Content Section (Right 2/3) -->
+                                <div class="w-2/3 product-content">
+                                    <div class="mb-4">
+                                        <span data-i18n="product.product.highlight3" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Eco-Friendly</span>
+                                    </div>
+                                    <h3 data-i18n="product.product.title3" class="text-3xl lg:text-4xl font-bold text-brand-navy mb-6">Printed Carton Box</h3>
+                                    <p data-i18n="product.product.caption3" class="text-lg lg:text-xl text-brand-navy/70 leading-relaxed">
+                                       Custom-printed carton boxes that elevate your brand. Vibrant, precise printing on sturdy corrugated material—perfect for retail and e-commerce packaging.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="flex items-stretch h-full">
+                                <!-- Image Section (Left 1/3) -->
+                                <div class="w-1/3 product-image">
+                                    <img src="assets/product3.png" alt="Die-Cut Packaging">
+                                </div>
+                                
+                                <!-- Content Section (Right 2/3) -->
+                                <div class="w-2/3 product-content">
+                                    <div class="mb-4">
+                                        <span data-i18n="product.product.highlight4" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Precision Made</span>
+                                    </div>
+                                    <h3 data-i18n="product.product.title4" class="text-3xl lg:text-4xl font-bold text-brand-navy mb-6">Die-Cut Carton Box</h3>
+                                    <p data-i18n="product.product.caption4" class="text-lg lg:text-xl text-brand-navy/70 leading-relaxed">
+                                       Precision-engineered die cut boxes tailored to your product's shape and structure. Functional, sleek, and ready to impress.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.product-carousel', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1,
+                }
+            }
+        });
+    </script>
+</body>
+</html>

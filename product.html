@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Rapipack Asritama</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="navbar.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+            'slide-in-left': 'slideInLeft 0.8s ease-out',
+            'slide-in-right': 'slideInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.6s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideInLeft: {
+              '0%': { opacity: '0', transform: 'translateX(-50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            slideInRight: {
+              '0%': { opacity: '0', transform: 'translateX(50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.9)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+    .container {
+  max-width: 100%; /* Ensure container is responsive */
+}
+
+#about, #products {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+    .glass-effect {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .bg-cover-overlay {
+      background-image: url('assets/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .bg-cover-overlay2 {
+      background-image: url('assets/factory3.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay2 {
+      background: rgba(96, 99, 114, 0.702);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #F99F15, #E4131C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Professional Carousel Styles */
+    .product-carousel {
+      position: relative;
+      overflow: visible !important;
+      padding: 0 100px;
+      height: 650px;
+    }
+
+    .product-carousel .swiper-wrapper {
+      align-items: center;
+    }
+
+    .product-carousel .swiper-slide {
+      height: 550px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Professional Navigation Buttons */
+   .swiper-button-next,
+.swiper-button-prev {
+  background: none !important;
+}
+
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: #0072bc;
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(32, 31, 124, 0.3);
+    }
+
+    .swiper-button-next {
+      right: 15px !important;
+    }
+
+    .swiper-button-prev {
+      left: 15px !important;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 24px !important;
+      font-weight: bold;
+    }
+
+    /* Professional Pagination */
+    .swiper-pagination-bullet {
+      width: 16px !important;
+      height: 16px !important;
+      background: rgba(32, 31, 124, 0.3) !important;
+      opacity: 1 !important;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #201f7c !important;
+      transform: scale(1.4);
+    }
+
+    .swiper-pagination {
+      bottom: -70px !important;
+    }
+
+    /* Professional Product Card */
+    .product-card {
+      background: white;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      transition: all 0.4s ease;
+      height: 100%;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      border: 1px solid rgba(32, 31, 124, 0.1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.18);
+      border-color: rgba(32, 31, 124, 0.2);
+    }
+
+    .product-image {
+      height: 550px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(32, 31, 124, 0.1), rgba(0, 114, 188, 0.1));
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .product-image::before {
+      opacity: 1;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-content {
+      padding: 70px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+      height: 550px;
+      position: relative;
+    }
+
+    .product-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(135deg, #F99F15, #E4131C);
+    }
+
+    .learn-more-btn {
+      background: #201f7c;
+      color: white;
+      padding: 18px 36px;
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: 2px solid #201f7c;
+      cursor: pointer;
+      align-self: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .learn-more-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0072bc, #201f7c);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .learn-more-btn:hover::before {
+      left: 0;
+    }
+
+    .learn-more-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(32, 31, 124, 0.3);
+    }
+
+    /* Professional Client Section */
+    .client-card {
+      background: white;
+      border: 1px solid rgba(32, 31, 124, 0.1);
+      transition: all 0.3s ease;
+      padding: 40px 30px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .client-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #F99F15, #E4131C);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .client-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .client-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      border-color: rgba(32, 31, 124, 0.2);
+    }
+
+    .client-logo {
+      max-width: 140px;
+      max-height: 80px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: all 0.3s ease;
+    }
+
+    .client-card:hover .client-logo {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    /* Stats Counter */
+    .stats-item {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .stats-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 1024px) {
+      .product-content {
+        padding: 50px 40px;
+        height: auto;
+      }
+      
+      .product-image {
+        height: 350px;
+      }
+      
+      .product-carousel {
+        height: auto;
+        padding: 0 80px;
+      }
+      
+      .product-carousel .swiper-slide {
+        height: auto;
+      }
+      
+      .product-card .flex {
+        flex-direction: column;
+      }
+      
+      .product-card .w-1\/3,
+      .product-card .w-2\/3 {
+        width: 100% !important;
+      }
+
+      .client-card {
+        height: 140px;
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-carousel {
+        padding: 0 60px;
+      }
+      
+      .product-content {
+        padding: 40px 30px;
+      }
+      
+      .product-image {
+        height: 280px;
+      }
+      
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 60px !important;
+        height: 60px !important;
+        margin-top: -30px !important;
+      }
+      
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 20px !important;
+      }
+
+      .client-card {
+        height: 120px;
+        padding: 20px 15px;
+      }
+
+      .client-logo {
+        max-width: 100px;
+        max-height: 60px;
+      }
+    }
+  </style>
+</head>
+
+  <div id="navbar-container"></div>
+<body class="bg-brand-cream">
+  <!-- Hero Section -->
+  <section id="about" class="py-40 bg-cover bg-center bg-cover-overlay2 relative overflow-hidden">
+    <div class="absolute inset-0 bg-overlay2 z-10"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h1 data-i18n="product.hero.title" class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight animate-fade-in-up">
+        Our 
+        <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
+          Products
+        </span>
+      </h1>
+      <p data-i18n="product.hero.caption" class="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+        We are eager to serve the best quality
+      </p>
+      
+      <!-- Stats Section -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
+        <div class="stats-item animate-scale-in" style="animation-delay: 0.4s;">
+          <div class="text-3xl font-bold text-white mb-2">500+</div>
+          <div data-i18n="product.hero.stat1" class="text-sm text-blue-100 uppercase tracking-wide">Projects Completed</div>
+        </div>
+        <div class="stats-item animate-scale-in" style="animation-delay: 0.6s;">
+          <div class="text-3xl font-bold text-white mb-2">50+</div>
+          <div data-i18n="product.hero.stat2" class="text-sm text-blue-100 uppercase tracking-wide">Happy Clients</div>
+        </div>
+        <div class="stats-item animate-scale-in" style="animation-delay: 0.8s;">
+          <div class="text-3xl font-bold text-white mb-2">15+</div>
+          <div data-i18n="product.hero.stat3" class="text-sm text-blue-100 uppercase tracking-wide">Years Experience</div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/20 blur-xl animate-float"></div>
+    <div class="absolute bottom-20 right-20 w-32 h-32 bg-brand-red/20 blur-xl animate-float" style="animation-delay: -3s;"></div>
+  </section>
+
+  <!-- Products Section -->
+<section id="products" class="py-10 bg-gradient-to-br from-white to-brand-cream">
+  <div class="container mx-auto px-6 lg:px-12">
+    <div class="text-center">
+      <h2 data-i18n="product.product.title" class="text-3xl md:text-4xl font-black text-brand-navy mb-3">
+        Our <span class="text-gradient">Expertise</span>
+      </h2>
+      <p data-i18n="product.product.subtitle" class="text-sm md:text-base text-brand-navy/70 max-w-2xl mx-auto leading-snug">
+        From premium shipping solutions to cutting-edge custom packaging, we deliver excellence across our comprehensive product range.
+      </p>
+    </div>
+
+    <!-- Swiper Container -->
+    <div class="swiper product-carousel mb-10">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide flex justify-center">
+          <div class="product-card w-full max-w-[640px] h-[210px] md:h-[300px] overflow-hidden rounded-xl bg-white shadow-sm">
+            <div class="flex items-center h-full">
+              <!-- Image (smaller) -->
+              <div class="w-1/3 h-full flex items-center justify-center p-3">
+                <img src="assets/product1.png" alt="Premium Shipping Boxes" class="max-h-[150px] object-contain">
+              </div>
+
+              <!-- Vertical divider (kept, but thin) -->
+              <div class="h-[70%] w-[3px] bg-gradient-to-b from-brand-orange to-red-500 rounded-full"></div>
+
+              <!-- Content (compact) -->
+              <div class="w-2/3 p-4">
+                <span data-i18n="product.product.highlight1" class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider">Premium Quality</span>
+                <h3 data-i18n="product.product.title1" class="text-lg md:text-xl font-bold text-brand-navy mt-1 mb-2">Sheet Board</h3>
+                <p data-i18n="product.product.desc1" class="text-xs md:text-sm text-brand-navy/70 leading-snug line-clamp-3">
+                  Durable and versatile corrugated sheet boards available in various sizes and thicknesses — ideal for custom packaging, inserts, and protective layers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide flex justify-center">
+          <div class="product-card w-full max-w-[640px] h-[210px] md:h-[300px] overflow-hidden rounded-xl bg-white shadow-sm">
+            <div class="flex items-center h-full">
+              <div class="w-1/3 h-full flex items-center justify-center p-3">
+                <img src="assets/product2.png" alt="Rigid Packaging Boxes" class="max-h-[150px] object-contain">
+              </div>
+              <div class="h-[70%] w-[3px] bg-gradient-to-b from-brand-orange to-red-500 rounded-full"></div>
+              <div class="w-2/3 p-4">
+                <span data-i18n="product.product.highlight2" class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider">Luxury Grade</span>
+                <h3 data-i18n="product.product.title2" class="text-lg md:text-xl font-bold text-brand-navy mt-1 mb-2">Blank Box</h3>
+                <p data-i18n="product.product.caption2" class="text-xs md:text-sm text-brand-navy/70 leading-snug line-clamp-3">
+                  High-quality plain carton boxes for general packaging needs. Strong, reliable, and perfect for storage, shipping, or custom branding.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide flex justify-center">
+          <div class="product-card w-full max-w-[640px] h-[210px] md:h-[300px] overflow-hidden rounded-xl bg-white shadow-sm">
+            <div class="flex items-center h-full">
+              <div class="w-1/3 h-full flex items-center justify-center p-3">
+                <img src="assets/product3.png" alt="Flexible Packaging" class="max-h-[150px] object-contain">
+              </div>
+              <div class="h-[70%] w-[3px] bg-gradient-to-b from-brand-orange to-red-500 rounded-full"></div>
+              <div class="w-2/3 p-4">
+                <span data-i18n="product.product.highlight3" class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider">Eco-Friendly</span>
+                <h3 data-i18n="product.product.title3" class="text-lg md:text-xl font-bold text-brand-navy mt-1 mb-2">Printed Carton Box</h3>
+                <p data-i18n="product.product.caption3" class="text-xs md:text-sm text-brand-navy/70 leading-snug line-clamp-3">
+                  Custom-printed carton boxes that elevate your brand. Vibrant, precise printing on sturdy corrugated material—perfect for retail and e-commerce packaging.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide flex justify-center">
+          <div class="product-card w-full max-w-[640px] h-[210px] md:h-[300px] overflow-hidden rounded-xl bg-white shadow-sm">
+            <div class="flex items-center h-full">
+              <div class="w-1/3 h-full flex items-center justify-center p-3">
+                <img src="assets/product3.png" alt="Flexible Packaging" class="max-h-[150px] object-contain">
+              </div>
+              <div class="h-[70%] w-[3px] bg-gradient-to-b from-brand-orange to-red-500 rounded-full"></div>
+              <div class="w-2/3 p-4">
+                <span data-i18n="product.product.highlight4" class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider">Eco-Friendly</span>
+                <h3 data-i18n="product.product.title4" class="text-lg md:text-xl font-bold text-brand-navy mt-1 mb-2">Die-Cut Carton Box</h3>
+                <p data-i18n="product.product.caption4" class="text-xs md:text-sm text-brand-navy/70 leading-snug line-clamp-3">
+                  Precision-engineered die cut boxes tailored to your product's shape and structure. Functional, sleek, and ready to impress.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Enhanced Trusted By Section -->
+  <section id="trusted-by" class="py-24 bg-gradient-to-br from-gray-50 to-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 data-i18n="product.client.title" class="text-4xl md:text-5xl font-black text-brand-navy mb-6 animate-fade-in-up">
+                Trusted by <span class="text-gradient">Industry Leaders</span>
+            </h2>
+            <p data-i18n="product.client.subtitle" class="text-lg text-brand-navy/70 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s;">
+                We're proud to partner with leading companies across various industries, delivering exceptional packaging solutions that drive their success.
+            </p>
+        </div>
+
+        <!-- Client Logo Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mb-16">
+            <!-- Client Logo 1 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.1s;">
+                <img src="assets/logo1.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 2 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.2s;">
+                <img src="assets/logo2.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 3 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.3s;">
+                <img src="assets/logo3.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 4 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.4s;">
+                <img src="assets/logo4.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 5 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.5s;">
+                <img src="assets/logo5.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 6 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.6s;">
+                <img src="assets/logo6.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 7 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.7s;">
+                <img src="assets/logo7.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 8 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.8s;">
+                <img src="assets/logo8.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 9 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 0.9s;">
+                <img src="assets/logo9.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 10 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.0s;">
+                <img src="assets/logo10.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 11 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.1s;">
+                <img src="assets/logo11.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 12 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.2s;">
+                <img src="assets/logo12.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 13 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.3s;">
+                <img src="assets/logo13.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 14 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.4s;">
+                <img src="assets/logo14.jpg" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 15 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.5s;">
+                <img src="assets/logo15.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 16 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.6s;">
+                <img src="assets/logo16.jpg" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 17 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.7s;">
+                <img src="assets/logo17.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 18 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.8s;">
+                <img src="assets/logo18.jpg" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 19 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 1.9s;">
+                <img src="assets/logo19.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 20 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 2.0s;">
+                <img src="assets/logo20.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 21 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 2.1s;">
+                <img src="assets/logo21.jpg" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 22 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 2.2s;">
+                <img src="assets/logo22.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 23 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 2.3s;">
+                <img src="assets/logo23.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 24 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 2.4s;">
+                <img src="assets/logo24.png" alt="Client Logo" class="client-logo">
+            </div>
+            <!-- Client Logo 25 -->
+            <div class="client-card animate-slide-in-left" style="animation-delay: 2.5s;">
+                <img src="assets/logo25.png" alt="Client Logo" class="client-logo">
+            </div>
+        </div>
+
+      
+    </div>
+</section>
+
+
+  <!-- Footer Section -->
+  <footer class="bg-brand-navy text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <div class="border-t border-white/20 pt-8">
+        <p class="text-blue-100">&copy; 2024 PT. Rapipack Asritama | Part of SCG Packaging</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Translations -->
+<script>
+(() => {
+  const DEFAULT_LANG = 'en';
+  let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+
+  // 1) Translations library (keep/edit here in your page)
+const t = {
+  en: {
+    // Hero
+    'product.hero.title': `Our <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Products</span>`,
+    'product.hero.caption': `We are eager to serve the best quality`,
+    'product.hero.stat1': `Projects Completed`,
+    'product.hero.stat2': `Happy Clients`,
+    'product.hero.stat3': `Years Experience`,
+
+    // Products section header
+    'product.product.title': `Our <span class="text-gradient">Expertise</span>`,
+    'product.product.subtitle': `From premium shipping solutions to cutting-edge custom packaging, we deliver excellence across our comprehensive product range.`,
+
+    // Slide 1
+    'product.product.highlight1': 'Premium Quality',
+    'product.product.title1': 'Sheet Board',
+    'product.product.desc1': 'Durable and versatile corrugated sheet boards available in various sizes and thicknesses — ideal for custom packaging, inserts, and protective layers.',
+
+    // Slide 2
+    'product.product.highlight2': 'Luxury Grade',
+    'product.product.title2': 'Blank Box',
+    'product.product.caption2': 'High-quality plain carton boxes for general packaging needs. Strong, reliable, and perfect for storage, shipping, or custom branding.',
+
+    // Slide 3
+    'product.product.highlight3': 'Eco-Friendly',
+    'product.product.title3': 'Printed Carton Box',
+    'product.product.caption3': 'Custom-printed carton boxes that elevate your brand. Vibrant, precise printing on sturdy corrugated material—perfect for retail and e-commerce packaging.',
+
+    // Slide 4
+    'product.product.highlight4': 'Eco-Friendly',
+    'product.product.title4': 'Die-Cut Carton Box',
+    'product.product.caption4': `Precision-engineered die cut boxes tailored to your product's shape and structure. Functional, sleek, and ready to impress.`,
+
+    // Trusted by
+    'product.client.title': `Trusted by <span class="text-gradient">Industry Leaders</span>`,
+    'product.client.subtitle': `We're proud to partner with leading companies across various industries, delivering exceptional packaging solutions that drive their success.`,
+  },
+
+  id: {
+    // Hero
+    'product.hero.title': `Produk <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Kami</span>`,
+    'product.hero.caption': `Kami siap menghadirkan kualitas terbaik`,
+    'product.hero.stat1': `Proyek Selesai`,
+    'product.hero.stat2': `Klien Puas`,
+    'product.hero.stat3': `Tahun Pengalaman`,
+
+    // Products section header
+    'product.product.title': `Keahlian <span class="text-gradient">Kami</span>`,
+    'product.product.subtitle': `Dari solusi pengiriman premium hingga kemasan kustom terbaru, kami menghadirkan keunggulan di seluruh lini produk.`,
+
+    // Slide 1
+    'product.product.highlight1': 'Kualitas Premium',
+    'product.product.title1': 'Lembaran Karton',
+    'product.product.desc1': 'Lembaran karton bergelombang yang kuat dan serbaguna—tersedia dalam berbagai ukuran dan ketebalan; ideal untuk kemasan kustom, sisipan, dan lapisan pelindung.',
+
+    // Slide 2
+    'product.product.highlight2': 'Kelas Mewah',
+    'product.product.title2': 'Karton Polos',
+    'product.product.caption2': 'Karton polos berkualitas tinggi untuk kebutuhan kemasan umum. Kokoh, andal, dan cocok untuk penyimpanan, pengiriman, atau branding kustom.',
+
+    // Slide 3
+    'product.product.highlight3': 'Ramah Lingkungan',
+    'product.product.title3': 'Karton Cetak',
+    'product.product.caption3': 'Karton cetak kustom yang mengangkat brand Anda. Cetak tajam di material bergelombang yang kuat—tepat untuk ritel dan e‑commerce.',
+
+    // Slide 4
+    'product.product.highlight4': 'Ramah Lingkungan',
+    'product.product.title4': 'Karton Die‑Cut',
+    'product.product.caption4': `Karton die‑cut berpresisi yang disesuaikan dengan bentuk dan struktur produk Anda. Fungsional, rapi, dan siap memukau.`,
+
+    // Trusted by
+    'product.client.title': `Dipercaya <span class="text-gradient">Para Pemimpin Industri</span>`,
+    'product.client.subtitle': `Kami bangga bermitra dengan berbagai perusahaan terkemuka, menyediakan solusi kemasan unggul yang mendorong keberhasilan mereka.`,
+  },
+
+  zh: {
+    // Hero
+    'product.hero.title': `我们的<span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">产品</span>`,
+    'product.hero.caption': `我们致力于提供最佳品质`,
+    'product.hero.stat1': `已完成项目`,
+    'product.hero.stat2': `满意客户`,
+    'product.hero.stat3': `年行业经验`,
+
+    // Products section header
+    'product.product.title': `我们的<span class="text-gradient">专长</span>`,
+    'product.product.subtitle': `从高端运输方案到前沿定制包装，我们在全线产品中追求卓越。`,
+
+    // Slide 1
+    'product.product.highlight1': '优质等级',
+    'product.product.title1': '纸板片',
+    'product.product.desc1': '耐用且多用途的瓦楞纸板，提供多种尺寸与厚度——非常适合定制包装、内衬与保护层。',
+
+    // Slide 2
+    'product.product.highlight2': '高端等级',
+    'product.product.title2': '素色纸箱',
+    'product.product.caption2': '高品质素色纸箱，适用于通用包装。坚固可靠，适合仓储、运输或品牌定制。',
+
+    // Slide 3
+    'product.product.highlight3': '环保友好',
+    'product.product.title3': '印刷纸箱',
+    'product.product.caption3': '定制印刷纸箱提升品牌形象。色彩鲜明、印刷精细且结构坚固——适合零售与电商。',
+
+    // Slide 4
+    'product.product.highlight4': '环保友好',
+    'product.product.title4': '模切纸箱',
+    'product.product.caption4': `按产品外形量身定制的模切纸箱。功能实用，外观利落，令人印象深刻。`,
+
+    // Trusted by
+    'product.client.title': `受到<span class="text-gradient">行业领袖</span>的信赖`,
+    'product.client.subtitle': `我们与各行业领先企业合作，提供卓越的包装方案，助力其业务成功。`,
+  }
+};
+
+  // 2) Swap texts for all [data-i18n] (supports HTML)
+  function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t[currentLang]?.[key];
+      if (typeof val === 'string') el.innerHTML = val;
+    });
+    // highlight active lang button if present
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const active = btn.dataset.lang === currentLang;
+      btn.classList.toggle('ring-2', active);
+      btn.classList.toggle('ring-brand-blue', active);
+    });
+  }
+
+  // 3) Change language (persist to localStorage)
+  function setLang(lang) {
+    if (!t[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    applyTranslations();
+  }
+
+  // 4) Load navbar.html, then wire the 3 buttons
+  async function loadNavbar() {
+    const host = document.getElementById('navbar-container');
+    if (!host) return;
+    const res = await fetch('navbar.html', { cache: 'no-cache' });
+    host.innerHTML = await res.text();
+
+    // Event delegation: handle clicks on EN/ID/中文 buttons
+    host.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-btn');
+      if (btn && btn.dataset.lang) setLang(btn.dataset.lang);
+    });
+
+    // After navbar is in the DOM, apply current language to nav labels
+    applyTranslations();
+  }
+
+  // 5) Init
+  window.addEventListener('DOMContentLoaded', async () => {
+    await loadNavbar();
+    applyTranslations(); // translate rest of the page content
+  });
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper('.product-carousel', {
+        slidesPerView: 1,
+        spaceBetween: 40,
+        loop: true,
+        speed: 800,
+        
+        // Auto-advance every 5 seconds
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        
+        // Pagination dots
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          dynamicBullets: true,
+        },
+        
+        // Responsive breakpoints
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 40,
+          },
+        },
+        
+        // Smooth transitions with parallax effect
+        on: {
+          transitionStart: function () {
+            this.slides.forEach(slide => {
+              slide.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            });
+          },
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.querySelectorAll('[class*="animate-"]').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

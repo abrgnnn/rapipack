@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Rapipack Asritama - Technology</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="navbar.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+            'slide-in-left': 'slideInLeft 0.8s ease-out',
+            'slide-in-right': 'slideInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.6s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideInLeft: {
+              '0%': { opacity: '0', transform: 'translateX(-50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            slideInRight: {
+              '0%': { opacity: '0', transform: 'translateX(50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.9)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body {
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    .container {
+      max-width: 100%; /* Ensure container is responsive */
+    }
+    #about, #products {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-cream">
+  <!-- Navbar Section (Assumed existing navbar) -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section id="about" class="py-40 bg-cover bg-center bg-cover-overlay2 relative overflow-hidden">
+    <div class="absolute inset-0 bg-overlay2 z-10"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight animate-fade-in-up">
+        Our 
+        <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
+          Technology
+        </span>
+      </h1>
+      <p class="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+        We are eager to serve the best quality
+      </p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-32 bg-gradient-to-br from-white to-brand-cream min-h-screen flex items-center">
+    <div class="container mx-auto px-8 lg:px-16">
+      <div class="text-center mb-24">
+        <h2 class="text-4xl md:text-5xl font-black text-brand-navy mb-6 animate-fade-in-up">
+          Our <span class="text-gradient">Technology</span>
+        </h2>
+        <p class="text-lg md:text-xl text-brand-navy/70 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+          From premium shipping solutions to cutting-edge custom packaging, we deliver excellence across our comprehensive product range.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Technology Section (Machinery) -->
+  <section id="machines" class="py-24 bg-gradient-to-br from-gray-50 to-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-brand-navy mb-6">
+          Our Technology
+        </h2>
+        <p class="text-lg text-brand-navy/70 max-w-2xl mx-auto">
+          We pride ourselves on using state-of-the-art machinery to deliver top-quality packaging solutions.
+        </p>
+      </div>
+
+      <!-- Machine Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Machine Card 1 -->
+        <div class="bg-white shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+          <div class="relative w-full h-64">
+            <div class="absolute inset-0">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="assets/flatbed.jpg" alt="Flatbed Diecut" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-brand-navy">Flatbed Diecut</h3>
+          </div>
+        </div>
+
+        <!-- Machine Card 2 -->
+        <div class="bg-white shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+          <div class="relative w-full h-64">
+            <div class="absolute inset-0">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="assets/robotic.jpg" alt="Robotic Palletizer" class="w-full h-full object-cover">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/robotic2.jpg" alt="Robotic Palletizer" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-brand-navy">Robotic Palletizer</h3>
+          </div>
+        </div>
+
+        <!-- Machine Card 3 -->
+        <div class="bg-white shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+          <div class="relative w-full h-64">
+            <div class="absolute inset-0">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="assets/lian.jpg" alt="Lian Tiee Flexo" class="w-full h-full object-cover">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/lian2.jpg" alt="Lian Tiee Flexo" class="w-full h-full object-cover">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/lian3.jpg" alt="Lian Tiee Flexo" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-brand-navy">Lian Tiee Flexo</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Already Exists) -->
+  <footer class="bg-brand-navy text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">PT. Rapipack Asritama</h3>
+        <p class="text-blue-100 max-w-2xl mx-auto">
+          Leading packaging solutions provider, delivering excellence through innovation and quality craftsmanship.
+        </p>
+      </div>
+      <div class="border-t border-white/20 pt-8">
+        <p class="text-blue-100">&copy; 2024 PT. Rapipack Asritama | Part of SCG Packaging</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 1000, // 1 second per slide
+      },
+      loop: true, // Continuously loop the slides
+    });
+  </script>
+</body>
+</html>

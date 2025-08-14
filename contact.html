@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Rapipack Asritama - Contact Us</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="navbar.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+            'slide-left': 'slideLeft 0.8s ease-out',
+            'slide-right': 'slideRight 0.8s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideLeft: {
+              '0%': { opacity: '0', transform: 'translateX(-50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            slideRight: {
+              '0%': { opacity: '0', transform: 'translateX(50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .iframe-container {
+    position: relative;
+    padding-top: 20px; /* Adds some space around the iframe */
+  }
+
+  iframe {
+    border-radius: 10px; /* Rounds the iframe corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow around the iframe */
+    transition: transform 0.3s ease; /* Adds smooth transition for hover effect */
+  }
+
+  iframe:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+  }
+
+  form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-family: 'Arial', sans-serif;
+    color: #201f7c; /* You can change this to a different color if needed */
+    font-weight: 600;
+  }
+    .bg-contact {
+      background-image: url('assets/factory2.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    .bg-overlay {
+      background: rgba(32, 31, 124, 0.8);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-brand-cream">
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-container"></div>
+
+<!-- Hero Section with Diagonal Layout -->
+   <section id="contact" class="py-40 bg-contact bg-cover bg-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-overlay z-10"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h1 data-i18n="contact.hero.title" class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+        Get In Touch
+      </h1>
+      <p data-i18n="contact.hero.subtitle" class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+        We are always here to assist you. Reach out to us via any of the contact methods below.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Methods - Asymmetric Cards -->
+<section class="py-24 bg-white relative">
+  <div class="container mx-auto px-6">
+    <!-- Section Header - Left Aligned -->
+    <div class="max-w-2xl mb-16">
+      <h2 class="text-4xl md:text-6xl font-black text-brand-navy mb-6">
+        <span data-i18n="contact.methods.title_part1">Multiple Ways to</span><br>
+        <span data-i18n="contact.methods.title_part2" class="text-brand-blue">Reach Us</span>
+      </h2>
+      <p data-i18n="contact.methods.description" class="text-lg text-gray-600 leading-relaxed">
+        Choose the communication method that works best for you. We're committed to responding quickly and effectively.
+      </p>
+    </div>
+
+    <!-- Contact Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Phone Card -->
+      <div class="bg-white p-8 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 relative">
+        <div class="absolute top-4 right-4 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-phone text-2xl text-brand-navy"></i>
+        </div>
+        <h3 data-i18n="contact.methods.phone_title" class="text-2xl font-bold text-brand-navy mb-4">Phone Support</h3>
+        <p data-i18n="contact.methods.phone_description" class="text-gray-600 mb-6">Get immediate assistance from our support team</p>
+        <div class="space-y-2">
+          <p class="font-semibold text-brand-navy">(021) 123-4567</p>
+        </div>
+      </div>
+
+      <!-- Email Card -->
+      <div class="bg-white p-8 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 relative">
+        <div class="absolute top-4 right-4 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-envelope text-2xl text-brand-navy"></i>
+        </div>
+        <h3 data-i18n="contact.methods.email_title" class="text-2xl font-bold text-brand-navy mb-4">Email Us</h3>
+        <p data-i18n="contact.methods.email_description" class="text-gray-600 mb-6">Send us detailed inquiries and documentation</p>
+        <div class="space-y-2">
+          <p class="font-semibold text-brand-navy">info@rapipack.com</p>
+   
+        </div>
+      </div>
+
+      <!-- Visit Card -->
+      <div class="bg-white p-8 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 relative md:col-span-2 lg:col-span-1">
+        <div class="absolute top-4 right-4 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-map-marker-alt text-2xl text-brand-navy"></i>
+        </div>
+        <h3 data-i18n="contact.methods.visit_title" class="text-2xl font-bold text-brand-navy mb-4">Visit Our Office</h3>
+        <div class="space-y-2">
+          <p class="font-semibold text-brand-navy"> Kawasan Bekasi International Industrail Estate Blok C-10 No. 3-3A Cibatu</p>
+          <p class="font-semibold text-brand-navy">Cikarang Selatan, Bekasi</p>
+          <p data-i18n="contact.methods.visit_hours" class="text-gray-500 text-sm">Mon-Fri: 8AM-6PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Map Section - Full Width with Offset Content -->
+  <section class="py-0 bg-gray-100 relative h-[600px]">
+  <div class="grid grid-cols-1 lg:grid-cols-2 h-full">
+    <!-- Map Side -->
+    <div class="h-full">
+      <iframe 
+        class="w-full h-full" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.41587189358!2d107.1343554731692!3d-6.34014766202847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699a4ff941386d%3A0x8c39a754172fc174!2sRapipack%20Asritama%20Pt.%2C%20Jl.%20Raya%20Inti%20Blok%20C10%20No.3A%2C%20Cibatu%2C%20Cikarang%20Sel.%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat%2017530!5e0!3m2!1sen!2sid!4v1753843429726!5m2!1sen!2sid" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Content Side -->
+    <div class="flex items-center justify-center p-12 lg:p-16">
+      <div>
+        <h2 data-i18n="contact.location.title" class="text-4xl md:text-5xl font-black text-brand-navy mb-6">
+          Our Location
+        </h2>
+        <p data-i18n="contact.location.description" class="text-lg text-gray-600 mb-8 leading-relaxed">
+           Serving clients across Jabodetabek, West Java, and throughout Indonesia.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Support & Social Media - Split Layout -->
+  <section class="py-24 bg-brand-cream">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Support Side -->
+        <div class="text-left">
+        
+          <h2 class="text-4xl md:text-5xl font-black text-brand-navy mb-6">
+            <span data-i18n="contact.support.title_part1">Always Here</span><br>
+            <span data-i18n="contact.support.title_part2" class="text-brand-blue">To Help</span>
+          </h2>
+          <p data-i18n="contact.support.description" class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Our dedicated support team is available around the clock to assist you with any questions or concerns. No matter the time zone, we're here for you.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <h4 data-i18n="contact.support.technical_title" class="font-bold text-brand-navy mb-2">Technical Support</h4>
+              <p data-i18n="contact.support.technical_description" class="text-gray-600 text-sm mb-3">Product issues & troubleshooting</p>
+              <p class="text-brand-blue font-semibold">support@rapipack.com</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <h4 data-i18n="contact.support.sales_title" class="font-bold text-brand-navy mb-2">Sales Inquiries</h4>
+              <p data-i18n="contact.support.sales_description" class="text-gray-600 text-sm mb-3">New projects & quotations</p>
+              <p class="text-brand-blue font-semibold">sales@rapipack.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minimal Contact Form -->
+<div class="hidden lg:block">
+  <form class="bg-white p-6 rounded-xl shadow-lg max-w-4xl mx-auto">
+    <!-- Embedded Google Form -->
+    <div class="iframe-container">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSduTZmwrqpsa1xAGfXSVT0scD5ZX0lHB3ziAyb-IaW4JxPKiw/viewform?embedded=true" 
+        width="100%" 
+        height="500" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        class="rounded-lg border-2 border-gray-200 shadow-md"
+      >
+        Loading…
+      </iframe>
+    </div>
+  </form>
+</div>
+
+        
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- Footer -->
+   <footer class="bg-brand-navy text-white py-12 text-center">
+    <p>&copy; PT. Rapipack Asritama | Part of SCG Packaging</p>
+  </footer>
+
+  <!-- Translations -->
+<script>
+  (() => {
+      const DEFAULT_LANG = 'en';
+  let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+
+const t = {
+  en: {
+    // Hero
+    'contact.hero.title': 'Get In Touch',
+    'contact.hero.subtitle': 'We are always here to assist you. Reach out to us via any of the contact methods below.',
+
+    // Methods header
+    'contact.methods.title_part1': 'Multiple Ways to',
+    'contact.methods.title_part2': 'Reach Us',
+    'contact.methods.description': `Choose the communication method that works best for you. We're committed to responding quickly and effectively.`,
+
+    // Phone card
+    'contact.methods.phone_title': 'Phone Support',
+    'contact.methods.phone_description': 'Get immediate assistance from our support team',
+    'contact.methods.phone_availability': 'Available 24/7',
+
+    // Email card
+    'contact.methods.email_title': 'Email Us',
+    'contact.methods.email_description': 'Send us detailed inquiries and documentation',
+    'contact.methods.email_response': 'Response within 2 hours',
+
+    // Visit card
+    'contact.methods.visit_title': 'Visit Our Office',
+    'contact.methods.visit_description': 'Schedule a meeting at our headquarters',
+    'contact.methods.visit_hours': 'Mon-Fri: 8AM-6PM',
+
+    // Map/Location
+    'contact.location.title': 'Our Location',
+    'contact.location.description': 'Serving clients across Jabodetabek, West Java, and throughout Indonesia.',
+
+    // Support & Social
+    'contact.support.title_part1': 'Always Here',
+    'contact.support.title_part2': 'To Help',
+    'contact.support.description': `Our dedicated support team is available around the clock to assist you with any questions or concerns. No matter the time zone, we're here for you.`,
+    'contact.support.technical_title': 'Technical Support',
+    'contact.support.technical_description': 'Product issues & troubleshooting',
+    'contact.support.sales_title': 'Sales Inquiries',
+    'contact.support.sales_description': 'New projects & quotations',
+  },
+
+  id: {
+    // Hero
+    'contact.hero.title': 'Hubungi Kami',
+    'contact.hero.subtitle': 'Kami selalu siap membantu Anda. Silakan hubungi melalui salah satu metode di bawah ini.',
+
+    // Methods header
+    'contact.methods.title_part1': 'Berbagai Cara untuk',
+    'contact.methods.title_part2': 'Menghubungi Kami',
+    'contact.methods.description': 'Pilih metode komunikasi yang paling nyaman untuk Anda. Kami berkomitmen merespons dengan cepat dan efektif.',
+
+    // Phone card
+    'contact.methods.phone_title': 'Dukungan Telepon',
+    'contact.methods.phone_description': 'Dapatkan bantuan langsung dari tim dukungan kami',
+    'contact.methods.phone_availability': 'Tersedia 24/7',
+
+    // Email card
+    'contact.methods.email_title': 'Email',
+    'contact.methods.email_description': 'Kirim pertanyaan dan dokumen secara detail',
+    'contact.methods.email_response': 'Balasan dalam 2 jam',
+
+    // Visit card
+    'contact.methods.visit_title': 'Kunjungi Kantor Kami',
+    'contact.methods.visit_description': 'Jadwalkan pertemuan di kantor pusat kami',
+    'contact.methods.visit_hours': 'Sen-Jum: 08.00–18.00',
+
+    // Map/Location
+    'contact.location.title': 'Lokasi Kami',
+    'contact.location.description': 'Melayani klien di Jabodetabek, Jawa Barat, dan seluruh Indonesia.',
+
+    // Support & Social
+    'contact.support.title_part1': 'Selalu Siap',
+    'contact.support.title_part2': 'Membantu',
+    'contact.support.description': 'Tim dukungan kami tersedia sepanjang waktu untuk membantu pertanyaan atau kendala Anda. Di zona waktu mana pun, kami selalu ada.',
+    'contact.support.technical_title': 'Dukungan Teknis',
+    'contact.support.technical_description': 'Masalah produk & troubleshooting',
+    'contact.support.sales_title': 'Pertanyaan Penjualan',
+    'contact.support.sales_description': 'Proyek baru & penawaran harga',
+  },
+
+  zh: {
+    // Hero
+    'contact.hero.title': '联系我们',
+    'contact.hero.subtitle': '我们随时为您提供帮助。可通过以下任一方式与我们取得联系。',
+
+    // Methods header
+    'contact.methods.title_part1': '多种方式',
+    'contact.methods.title_part2': '联系到我们',
+    'contact.methods.description': '选择最适合您的沟通方式。我们承诺快速而有效地回应。',
+
+    // Phone card
+    'contact.methods.phone_title': '电话支持',
+    'contact.methods.phone_description': '从客服团队获取即时协助',
+    'contact.methods.phone_availability': '全年无休 24/7',
+
+    // Email card
+    'contact.methods.email_title': '发送邮件',
+    'contact.methods.email_description': '欢迎发送详细咨询与附件资料',
+    'contact.methods.email_response': '2 小时内回复',
+
+    // Visit card
+    'contact.methods.visit_title': '拜访我们的办公室',
+    'contact.methods.visit_description': '在总部预约会面',
+    'contact.methods.visit_hours': '周一至周五：8:00–18:00',
+
+    // Map/Location
+    'contact.location.title': '我们的地址',
+    'contact.location.description': '服务范围覆盖雅加达大都会区、西亚瓦以及整个印尼。',
+
+    // Support & Social
+    'contact.support.title_part1': '始终在您身边',
+    'contact.support.title_part2': '为您提供帮助',
+    'contact.support.description': '我们的专属支持团队全天候待命，随时为您的任何问题或疑虑提供协助。无论哪个时区，我们都在。',
+    'contact.support.technical_title': '技术支持',
+    'contact.support.technical_description': '产品问题与故障排除',
+    'contact.support.sales_title': '销售咨询',
+    'contact.support.sales_description': '新项目与报价',
+  }
+};
+
+// 2) Swap texts for all [data-i18n] (supports HTML)
+  function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t[currentLang]?.[key];
+      if (typeof val === 'string') el.innerHTML = val;
+    });
+    // highlight active lang button if present
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const active = btn.dataset.lang === currentLang;
+      btn.classList.toggle('ring-2', active);
+      btn.classList.toggle('ring-brand-blue', active);
+    });
+  }
+
+  // 3) Change language (persist to localStorage)
+  function setLang(lang) {
+    if (!t[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    applyTranslations();
+  }
+
+  // 4) Load navbar.html, then wire the 3 buttons
+  async function loadNavbar() {
+    const host = document.getElementById('navbar-container');
+    if (!host) return;
+    const res = await fetch('navbar.html', { cache: 'no-cache' });
+    host.innerHTML = await res.text();
+
+    // Event delegation: handle clicks on EN/ID/中文 buttons
+    host.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-btn');
+      if (btn && btn.dataset.lang) setLang(btn.dataset.lang);
+    });
+
+    // After navbar is in the DOM, apply current language to nav labels
+    applyTranslations();
+  }
+
+  // 5) Init
+  window.addEventListener('DOMContentLoaded', async () => {
+    await loadNavbar();
+    applyTranslations(); // translate rest of the page content
+  });
+})();
+
+</script>
+
+</body>
+</html>

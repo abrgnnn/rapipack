@@ -1,0 +1,15 @@
+/* src/styles.css */
+
+/* Import Tailwind's core styles (base styles, normalize, etc.) */
+@tailwind base;
+
+/* Import Tailwind's component classes (like buttons, forms, etc.) */
+@tailwind components;
+
+/* Import Tailwind's utility classes (for things like padding, margin, etc.) */
+@tailwind utilities;
+
+/* Custom styles (optional) */
+body {
+  font-family: 'Arial', sans-serif;
+}

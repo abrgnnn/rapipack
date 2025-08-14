@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Rapipack Asritama</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="navbar.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+ <style>
+    .glass-effect {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Background image with transparent blue overlay */
+    .bg-cover-overlay {
+      background-image: url('assets/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0.5); /* Transparent blue overlay */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .bg-cover-overlay2 {
+      background-image: url('assets/factory.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay2 {
+      background: rgba(96, 99, 114, 0.702); /* Transparent blue overlay */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="bg-brand-cream">
+
+  <!-- Placeholder for Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section id="about" class=" py-40 bg-cover bg-center bg-cover-overlay2 relative overflow-hidden">
+        <div class="absolute inset-0 bg-overlay2 z-10"></div>
+
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 data-i18n="aboutus.hero.title" class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+            About 
+            <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
+                Our Story
+            </span>
+        </h1>
+        <p data-i18n="aboutus.hero.caption" class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            With over two decades of experience, we provide a wide range of high-quality carton boxes at competitive prices—serving both local clients in Jabodetabek and West Java, as well as customers nationwide
+        </p>
+        <button data-i18n="aboutus.hero.button" class="bg-gradient-to-r from-brand-navy to-brand-blue text-white font-semibold px-8 py-3 text-lg shadow-md hover:bg-brand-blue/80">
+            Discover Our Journey
+        </button>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/20 blur-xl"></div>
+    <div class="absolute bottom-20 right-20 w-32 h-32 bg-brand-red/20 blur-xl"></div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="relative py-16 bg-gradient-to-br from-white to-white-800">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="container mx-auto px-6 relative z-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Column - Title Text -->
+            <div class="col-span-1">
+                <div class="w-full h-96 flex items-center justify-center">
+                    <div class="text-center">
+                        <h2 data-i18n="aboutus.vision.title" class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+                            Our 
+                            <span class="block text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
+                                Vision
+                            </span>
+                            <span class="block">
+                                & Mission
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Vision & Mission Cards -->
+            <div class="col-span-1 space-y-8">
+                <!-- Vision Card -->
+                <div class="glass-card bg-white p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-gradient-to-r from-brand-orange to-brand-red rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="aboutus.vision.vistitle" class="text-2xl font-bold text-brand-navy mb-4">Our Vision</h3>
+                    <p data-i18n="aboutus.vision.viscapt" class="text-brand-navy/70 leading-relaxed">
+                        To become a reliable packaging company.
+                    </p>
+                </div>
+                
+                <!-- Mission Card -->
+                <div class="glass-card bg-white p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-gradient-to-r from-brand-red to-brand-orange rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="aboutus.vision.mistitle" class="text-2xl font-bold text-brand-navy mb-4">Our Mission</h3>
+                    <p data-i18n="aboutus.vision.mission1" class="text-brand-navy/70 leading-relaxed">
+                        • To produce high-quality packaging products with a focus on customer satisfaction through innovation, knowledge, and human resource development.
+                    </p>
+                    <p data-i18n="aboutus.vision.mission2" class="text-brand-navy/70 leading-relaxed">
+                        • To develop transparent management supported by strong corporate governance.
+                    </p>
+                    <p data-i18n="aboutus.vision.mission3" class="text-brand-navy/70 leading-relaxed">
+                        •  To build long-term, mutually beneficial relationships with all stakeholders.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Company Stats -->
+<section class="py-16 bg-brand-cream">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 data-i18n="aboutus.stats.title" class="text-4xl font-bold text-brand-navy mb-4">Our Impact</h2>
+            <p data-i18n="aboutus.stats.capt" class="text-brand-navy text-lg">Numbers that speak to our commitment and success</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="text-center stat-counter">
+                <div class="text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text mb-2">
+                    29+
+                </div>
+                <p data-i18n="aboutus.stats.capt1" class="text-brand-navy font-semibold">Years of Excellence</p>
+            </div>
+            
+            <div class="text-center stat-counter">
+                <div class="text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text mb-2">
+                    10K+
+                </div>
+                <p data-i18n="aboutus.stats.capt2" class="text-brand-navy font-semibold">Happy Clients</p>
+            </div>
+            
+            <div class="text-center stat-counter">
+                <div class="text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text mb-2">
+                    50M+
+                </div>
+                <p data-i18n="aboutus.stats.capt3" class="text-brand-navy font-semibold">Products Delivered</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Company Timeline -->
+ <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 data-i18n="aboutus.journey.title" class="text-4xl font-bold text-brand-navy mb-4">Our Journey</h2>
+                <p data-i18n="aboutus.journey.subtitle" class="text-brand-navy/70 text-lg max-w-2xl mx-auto">
+                    From humble beginnings to industry leadership - discover the milestones that shaped our company
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Main Timeline Line (Background) -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line hidden md:block opacity-30"></div>
+                
+                <div class="space-y-12">
+                    <!-- 1994 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+                            <div class="bg-gradient-to-r from-brand-orange to-brand-red text-white px-4 py-2 rounded-none inline-block mb-4 font-bold">
+                                1994
+                            </div>
+                            <h3 data-i18n="aboutus.journey.yeartitle1" class="text-2xl font-bold text-brand-navy mb-2">Company Founded</h3>
+                            <p data-i18n="aboutus.journey.yearcapt1" class="text-brand-navy/70">Rapipack was officially established, marking the beginning of our journey in the packaging industry.</p>
+                        </div>
+                        <div class="timeline-circle hidden md:block w-8 h-8 bg-white border-4 border-brand-orange rounded-full relative">
+                            <div class="timeline-connector"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8"></div>
+                    </div>
+                    
+                    <!-- 1996 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8"></div>
+                        <div class="timeline-circle hidden md:block w-8 h-8 bg-white border-4 border-brand-red rounded-full relative">
+                            <div class="timeline-connector"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+                            <div class="bg-gradient-to-r from-brand-red to-brand-orange text-white px-4 py-2 rounded-none inline-block mb-4 font-bold">
+                               1996
+                            </div>
+                            <h3 data-i18n="aboutus.journey.yeartitle2" class="text-2xl font-bold text-brand-navy mb-2">Start of Operations</h3>
+                            <p data-i18n="aboutus.journey.yearcapt2" class="text-brand-navy/70">Began full production of corrugated packaging products, marking the start of our manufacturing journey.</p>
+                        </div>
+                    </div>
+                    gik
+                    <!-- 2015 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+                            <div class="bg-gradient-to-r from-brand-orange to-brand-red text-white px-4 py-2 rounded-none inline-block mb-4 font-bold">
+                                2015
+                            </div>
+                            <h3 data-i18n="aboutus.journey.yeartitle3" class="text-2xl font-bold text-brand-navy mb-2">Sustainability Initiative</h3>
+                            <p data-i18n="aboutus.journey.yearcapt3" class="text-brand-navy/70">Launched our green packaging program, reducing environmental impact by 60%.</p>
+                        </div>
+                        <div class="timeline-circle hidden md:block w-8 h-8 bg-white border-4 border-brand-orange rounded-full relative">
+                            <div class="timeline-connector"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8"></div>
+                    </div>
+                    
+                    <!-- 2020 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8"></div>
+                        <div class="timeline-circle hidden md:block w-8 h-8 bg-white border-4 border-brand-red rounded-full relative">
+                            <!-- No connector for the last item -->
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+                            <div class="bg-gradient-to-r from-brand-red to-brand-orange text-white px-4 py-2 rounded-none inline-block mb-4 font-bold">
+                                2020
+                            </div>
+                            <h3 data-i18n="aboutus.journey.yeartitle4" class="text-2xl font-bold text-brand-navy mb-2">Acquired by SCG</h3>
+                            <p data-i18n="aboutus.journey.yearcapt4" class="text-brand-navy/70">Joined the SCG Packaging group, gaining new resources and opportunities for growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Values Section -->
+<section class="py-16 bg-gradient-to-r from-brand-navy to-slate-800">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 data-i18n="aboutus.values.title" class="text-4xl font-bold text-brand-cream mb-4">Our Core Values</h2>
+      <p data-i18n="aboutus.values.subtitle" class="text-brand-cream/70 text-lg">The principles that guide everything we do</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+      <!-- Relationship -->
+      <div class="text-center group">
+        <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl font-bold text-white">R</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-cream mb-3">Relationship</h3>
+        <p data-i18n="aboutus.values.capt1" class="text-brand-cream/70">Building healthy relationships through mutual support and coordination among all stakeholders.</p>
+      </div>
+
+      <!-- Achievement -->
+      <div class="text-center group">
+        <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl font-bold text-white">A</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-cream mb-3">Achievement</h3>
+        <p data-i18n="aboutus.values.capt2" class="text-brand-cream/70">Work achievements are a shared responsibility and are meant to be enjoyed collectively by all stakeholders.</p>
+      </div>
+
+      <!-- Priority -->
+      <div class="text-center group">
+        <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl font-bold text-white">P</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-cream mb-3">Priority</h3>
+        <p data-i18n="aboutus.values.capt3" class="text-brand-cream/70">Focusing on what's important rather than just what's urgent.</p>
+      </div>
+
+      <!-- Innovation -->
+      <div class="text-center group">
+        <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl font-bold text-white">I</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-cream mb-3">Innovation</h3>
+        <p data-i18n="aboutus.values.capt4" class="text-brand-cream/70">Being courageous and adaptable—embracing change with innovative solutions that align with the times.</p>
+      </div>
+
+      <!-- Integrity -->
+      <div class="text-center group">
+        <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl font-bold text-white">I</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-cream mb-3">Integrity</h3>
+        <p data-i18n="aboutus.values.capt5" class="text-brand-cream/70">Taking responsibility and maintaining zero tolerance for misconduct or compromise on ethics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+
+  <!-- Footer Section -->
+  <footer class="bg-brand-navy text-white py-12 text-center">
+    <p>&copy; PT. Rapipack Asritama | Part of SCG Packaging</p>
+  </footer>
+
+</body>
+  <!-- Translations -->
+<script>
+  (() => {
+      const DEFAULT_LANG = 'en';
+  let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+
+  const t = {
+  en: {
+    // HERO
+    'aboutus.hero.title': `About <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Our Story</span>`,
+    'aboutus.hero.caption': `With over two decades of experience, we provide a wide range of high-quality carton boxes at competitive prices—serving both local clients in Jabodetabek and West Java, as well as customers nationwide.`,
+    'aboutus.hero.button': `Discover Our Journey`,
+
+    // VISION & MISSION
+    'aboutus.vision.title': `Our <span class="block text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Vision</span><span class="block">& Mission</span>`,
+    'aboutus.vision.vistitle': `Our Vision`,
+    'aboutus.vision.viscapt': `To become a reliable packaging company.`,
+    'aboutus.vision.mistitle': `Our Mission`,
+    'aboutus.vision.mission1': `• To produce high-quality packaging products with a focus on customer satisfaction through innovation, knowledge, and human resource development.`,
+    'aboutus.vision.mission2': `• To develop transparent management supported by strong corporate governance.`,
+    'aboutus.vision.mission3': `• To build long-term, mutually beneficial relationships with all stakeholders.`,
+
+    // STATS
+    'aboutus.stats.title': `Our Impact`,
+    'aboutus.stats.capt': `Numbers that speak to our commitment and success`,
+    'aboutus.stats.capt1': `Years of Excellence`,
+    'aboutus.stats.capt2': `Happy Clients`,
+    'aboutus.stats.capt3': `Products Delivered`,
+    'aboutus.stats.capt4': `Customer Satisfaction`,
+
+    // JOURNEY / TIMELINE
+    'aboutus.journey.title': `Our Journey`,
+    'aboutus.journey.subtitle': `From humble beginnings to industry leadership - discover the milestones that shaped our company`,
+    'aboutus.journey.yeartitle1': `Company Founded`,
+    'aboutus.journey.yearcapt1': `Started as a small family business with a vision to revolutionize packaging solutions.`,
+    'aboutus.journey.yeartitle2': `International Expansion`,
+    'aboutus.journey.yearcapt2': `Expanded operations globally, serving clients across 15 countries.`,
+    'aboutus.journey.yeartitle3': `Sustainability Initiative`,
+    'aboutus.journey.yearcapt3': `Launched our green packaging program, reducing environmental impact by 60%.`,
+    'aboutus.journey.yeartitle4': `Innovation Lab`,
+    'aboutus.journey.yearcapt4': `Established R&D facility focusing on smart packaging and biodegradable materials.`,
+
+    // VALUES
+    'aboutus.values.title': `Our Core Values`,
+    'aboutus.values.subtitle': `The principles that guide everything we do`,
+    'aboutus.values.title1': `Relationship`,
+    'aboutus.values.capt1': `Building healthy relationships through mutual support and coordination among all stakeholders.`,
+    'aboutus.values.title2': `Achievement`,
+    'aboutus.values.capt2': `Work achievements are a shared responsibility and are meant to be enjoyed collectively by all stakeholders.`,
+    'aboutus.values.title3': `Priority`,
+    'aboutus.values.capt3': `Focusing on what’s important rather than just what’s urgent.`,
+    'aboutus.values.title4': `Innovation`,
+    'aboutus.values.capt4': `Being courageous and adaptable—embracing change with innovative solutions that align with the times.`,
+    'aboutus.values.title5': `Integrity`,
+    'aboutus.values.capt5': `Taking responsibility and maintaining zero tolerance for misconduct or compromise on ethics.`
+  },
+
+  id: {
+    // HERO
+    'aboutus.hero.title': `Tentang <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Kisah Kami</span>`,
+    'aboutus.hero.caption': `Dengan pengalaman lebih dari dua dekade, kami menyediakan berbagai kotak karton berkualitas tinggi dengan harga kompetitif—melayani klien lokal di Jabodetabek dan Jawa Barat, serta pelanggan di seluruh Indonesia.`,
+    'aboutus.hero.button': `Jelajahi Perjalanan Kami`,
+
+    // VISION & MISSION
+    'aboutus.vision.title': `Visi <span class="block text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Kami</span><span class="block">& Misi</span>`,
+    'aboutus.vision.vistitle': `Visi Kami`,
+    'aboutus.vision.viscapt': `Menjadi perusahaan kemasan yang andal.`,
+    'aboutus.vision.mistitle': `Misi Kami`,
+    'aboutus.vision.mission1': `• Menghasilkan produk kemasan berkualitas tinggi dengan fokus pada kepuasan pelanggan melalui inovasi, pengetahuan, dan pengembangan sumber daya manusia.`,
+    'aboutus.vision.mission2': `• Membangun manajemen yang transparan dengan tata kelola perusahaan yang kuat.`,
+    'aboutus.vision.mission3': `• Membangun hubungan jangka panjang yang saling menguntungkan dengan seluruh pemangku kepentingan.`,
+
+    // STATS
+    'aboutus.stats.title': `Dampak Kami`,
+    'aboutus.stats.capt': `Angka-angka yang mencerminkan komitmen dan keberhasilan kami`,
+    'aboutus.stats.capt1': `Tahun Keunggulan`,
+    'aboutus.stats.capt2': `Klien Puas`,
+    'aboutus.stats.capt3': `Produk Terkirim`,
+    'aboutus.stats.capt4': `Kepuasan Pelanggan`,
+
+    // JOURNEY / TIMELINE
+    'aboutus.journey.title': `Perjalanan Kami`,
+    'aboutus.journey.subtitle': `Dari awal yang sederhana menuju kepemimpinan industri — jelajahi tonggak yang membentuk perusahaan kami`,
+    'aboutus.journey.yeartitle1': `Perusahaan Didirikan`,
+    'aboutus.journey.yearcapt1': `Dimulai sebagai bisnis keluarga kecil dengan visi merevolusi solusi kemasan.`,
+    'aboutus.journey.yeartitle2': `Ekspansi Internasional`,
+    'aboutus.journey.yearcapt2': `Memperluas operasi secara global, melayani klien di 15 negara.`,
+    'aboutus.journey.yeartitle3': `Inisiatif Keberlanjutan`,
+    'aboutus.journey.yearcapt3': `Meluncurkan program kemasan hijau, mengurangi dampak lingkungan hingga 60%.`,
+    'aboutus.journey.yeartitle4': `Laboratorium Inovasi`,
+    'aboutus.journey.yearcapt4': `Mendirikan fasilitas R&D berfokus pada kemasan cerdas dan material biodegradable.`,
+
+    // VALUES
+    'aboutus.values.title': `Nilai Inti Kami`,
+    'aboutus.values.subtitle': `Prinsip-prinsip yang menuntun setiap langkah kami`,
+    'aboutus.values.title1': `Relasi`,
+    'aboutus.values.capt1': `Membangun relasi yang sehat melalui saling dukung dan koordinasi di antara seluruh pemangku kepentingan.`,
+    'aboutus.values.title2': `Pencapaian`,
+    'aboutus.values.capt2': `Pencapaian kerja adalah tanggung jawab bersama dan dinikmati secara kolektif oleh seluruh pemangku kepentingan.`,
+    'aboutus.values.title3': `Prioritas`,
+    'aboutus.values.capt3': `Berfokus pada hal yang penting, bukan sekadar yang mendesak.`,
+    'aboutus.values.title4': `Inovasi`,
+    'aboutus.values.capt4': `Berani dan adaptif—menghadapi perubahan dengan solusi inovatif yang relevan dengan perkembangan zaman.`,
+    'aboutus.values.title5': `Integritas`,
+    'aboutus.values.capt5': `Bertanggung jawab dan tegas pada toleransi nol terhadap pelanggaran atau kompromi etika.`
+  },
+
+  zh: {
+    // HERO
+    'aboutus.hero.title': `关于<span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">我们的故事</span>`,
+    'aboutus.hero.caption': `凭借二十多年的经验，我们以具有竞争力的价格提供各类高品质纸箱——服务范围覆盖雅加达大都会区、西亚瓦以及全印尼客户。`,
+    'aboutus.hero.button': `探索我们的历程`,
+
+    // VISION & MISSION
+    'aboutus.vision.title': `我们的<span class="block text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">愿景</span><span class="block">与使命</span>`,
+    'aboutus.vision.vistitle': `我们的愿景`,
+    'aboutus.vision.viscapt': `成为值得信赖的包装企业。`,
+    'aboutus.vision.mistitle': `我们的使命`,
+    'aboutus.vision.mission1': `• 以创新、知识与人才发展为驱动，专注客户满意度，生产高品质包装产品。`,
+    'aboutus.vision.mission2': `• 建立透明管理并以稳健的公司治理为支撑。`,
+    'aboutus.vision.mission3': `• 与所有利益相关者建立长期且互利的关系。`,
+
+    // STATS
+    'aboutus.stats.title': `我们的影响力`,
+    'aboutus.stats.capt': `用数据见证我们的承诺与成果`,
+    'aboutus.stats.capt1': `年卓越历程`,
+    'aboutus.stats.capt2': `位满意客户`,
+    'aboutus.stats.capt3': `件产品交付`,
+    'aboutus.stats.capt4': `客户满意度`,
+
+    // JOURNEY / TIMELINE
+    'aboutus.journey.title': `我们的旅程`,
+    'aboutus.journey.subtitle': `从朴素起步到行业领先——一起回顾塑造公司的重要里程碑`,
+    'aboutus.journey.yeartitle1': `公司成立`,
+    'aboutus.journey.yearcapt1': `以家族小企业起步，怀抱革新包装解决方案的愿景。`,
+    'aboutus.journey.yeartitle2': `国际扩张`,
+    'aboutus.journey.yearcapt2': `业务走向全球，服务遍及 15 个国家。`,
+    'aboutus.journey.yeartitle3': `可持续发展倡议`,
+    'aboutus.journey.yearcapt3': `启动绿色包装计划，将环境影响降低 60%。`,
+    'aboutus.journey.yeartitle4': `创新实验室`,
+    'aboutus.journey.yearcapt4': `成立研发中心，专注智能包装与可降解材料。`,
+
+    // VALUES
+    'aboutus.values.title': `我们的核心价值`,
+    'aboutus.values.subtitle': `指引我们一切行动的原则`,
+    'aboutus.values.title1': `关系`,
+    'aboutus.values.capt1': `通过彼此支持与协作，与所有利益相关者建立健康的关系。`,
+    'aboutus.values.title2': `成就`,
+    'aboutus.values.capt2': `工作成就是共同的责任，并由所有利益相关者共同分享。`,
+    'aboutus.values.title3': `优先级`,
+    'aboutus.values.capt3': `关注重要之事，而不只是一味追赶紧急任务。`,
+    'aboutus.values.title4': `创新`,
+    'aboutus.values.capt4': `勇于尝试并具备适应力——以符合时代的创新方案拥抱变化。`,
+    'aboutus.values.title5': `诚信`,
+    'aboutus.values.capt5': `敢于负责，对不当行为与道德妥协零容忍。`
+  }
+};
+  // 2) Swap texts for all [data-i18n] (supports HTML)
+  function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t[currentLang]?.[key];
+      if (typeof val === 'string') el.innerHTML = val;
+    });
+    // highlight active lang button if present
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const active = btn.dataset.lang === currentLang;
+      btn.classList.toggle('ring-2', active);
+      btn.classList.toggle('ring-brand-blue', active);
+    });
+  }
+
+  // 3) Change language (persist to localStorage)
+  function setLang(lang) {
+    if (!t[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    applyTranslations();
+  }
+
+  // 4) Load navbar.html, then wire the 3 buttons
+  async function loadNavbar() {
+    const host = document.getElementById('navbar-container');
+    if (!host) return;
+    const res = await fetch('navbar.html', { cache: 'no-cache' });
+    host.innerHTML = await res.text();
+
+    // Event delegation: handle clicks on EN/ID/中文 buttons
+    host.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-btn');
+      if (btn && btn.dataset.lang) setLang(btn.dataset.lang);
+    });
+
+    // After navbar is in the DOM, apply current language to nav labels
+    applyTranslations();
+  }
+
+  // 5) Init
+  window.addEventListener('DOMContentLoaded', async () => {
+    await loadNavbar();
+    applyTranslations(); // translate rest of the page content
+  });
+})();
+
+</script>
+</html>

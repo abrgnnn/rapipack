@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Rapipack Asritama</title>
+   <script src="navbar.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#201f7c',
+            'brand-blue': '#0072bc', 
+            'brand-cream': '#F7F2EB',
+            'brand-orange': '#F99F15',
+            'brand-red': '#E4131C'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in-up': 'fadeInUp 1s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="i18n.js" defer></script>
+  <style>
+    .glass-effect {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Background image with transparent blue overlay */
+    .bg-cover-overlay {
+      background-image: url('assets/factory.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .bg-overlay {
+      background: rgba(35, 51, 129, 0.702); /* Transparent blue overlay */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  </style>
+
+</head>
+<body class="bg-brand-cream">
+
+  <!-- Placeholder for Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-between overflow-hidden bg-cover-overlay">
+    <div class="bg-overlay"></div>
+    <section id="grid-rows-3" class="m-4 flex flex-col lg:flex-row items-center relative z-10">
+   
+
+      <!-- left side: Text -->
+       <div class="w-full lg:w-2/3 text-left px-6 flex flex-col gap-8 ml-12 pt-6 pb-6">
+    <!-- Header Block -->
+   <div class="header-block mb-0">
+        <h1 class="text-4xl md:text-5xl font-black text-white leading-normal pl-0">
+            <span class="block">Your Reliable</span>
+            <span class="block text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text leading-normal">
+            Partner in Packaging
+                </span>
+
+        </h1>
+    </div>
+    
+    <!-- Paragraph Block -->
+    <div class="paragraph-block mb-0">
+        <p class="text-lg md:text-xl text-blue-100 max-w-4xl leading-relaxed" data-i18n="about.hero.title">
+            PT. Rapipack Asritama is one of Indonesia’s leading manufacturers of corrugated carton packaging. Established in 1996, we are built on trust, innovation, and a strong commitment to quality and customer satisfaction.
+        </p>
+    </div>
+    
+    <!-- Buttons Block -->
+    <div class="buttons-block flex flex-col sm:flex-row gap-6 justify-start items-center sm:items-center mb-0">
+        <a href="product.html" data-i18n="about.hero.explore" class="btn-gradient text-white font-bold px-10 py-4 rounded-none text-lg shadow-xl" >
+            Explore Products
+        </a>
+        <a href="about.html" data-i18n="about.hero.learn" class="glass-effect text-white font-semibold px-10 py-4 rounded-none text-lg hover:bg-white/20 transition-all duration-300">
+            Learn More
+        </a>
+    </div>
+</div>
+
+         <!-- right side: Image -->
+      <div class="w-full lg:w-1/3 transform scale-105 mb-6 lg:mb-0">
+         <!--<img src="" alt="" class="w-full h-full object-cover">-->
+      </div>
+    </section>
+  </section>
+
+  <section class="py-24 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+        <!-- Video Section -->
+        <div class="relative">
+            <video class="w-full h-auto object-cover" autoplay muted loop>
+                <source src="assets/dummyvideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Optional Overlay -->
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+    </div>
+</section>
+
+  <!-- Products Section -->
+<section id="products" class="py-36 bg-white"> 
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 data-i18n="about.product.title" class="text-4xl md:text-5xl font-black text-brand-navy mb-6"> 
+        Our <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Products</span>
+      </h2>
+      <p data-i18n="about.product.caption" class="text-lg md:text-xl text-brand-navy/70 max-w-3xl mx-auto leading-relaxed">
+        From premium shipping solutions to cutting-edge custom packaging, we deliver excellence across our comprehensive product range.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8"> 
+      <!-- Sheet Board -->
+      <div class="bg-white border border-gray-200 overflow-hidden transform hover:-translate-y-2 transition-all duration-500 group h-96 flex flex-col">
+        <div class="bg-brand-navy h-48 flex items-center justify-center relative overflow-hidden">
+          <img src="assets/product1.png" 
+               alt="Sheet Board" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="hidden w-full h-full bg-gray-300 items-center justify-center">
+            <div class="text-center">
+              <div class="w-24 h-16 mx-auto mb-2 bg-gray-400 flex items-center justify-center">
+                <span class="text-white font-semibold text-xs">IMAGE</span>
+              </div>
+              <p data-i18n="about.product.name1" class="text-sm font-semibold text-gray-600">Sheet Board</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="mb-2">
+            <span data-i18n="about.product.highlight1" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Premium Quality</span>
+          </div>
+          <h3 data-i18n="about.product.name1" class="text-xl font-bold text-brand-navy mb-4">Sheet Board</h3>
+          <p data-i18n="about.product.caption1" class="text-brand-navy/70 mb-4 leading-relaxed text-sm">
+            Durable and versatile corrugated sheet boards available in various sizes and thicknesses — ideal for custom packaging, inserts, and protective layers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Blank Box -->
+      <div class="bg-white border border-gray-200 overflow-hidden transform hover:-translate-y-2 transition-all duration-500 group h-96 flex flex-col">
+        <div class="bg-brand-navy h-48 flex items-center justify-center relative overflow-hidden">
+          <img src="assets/product2.png" 
+               alt="Blank Box" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="hidden w-full h-full bg-gray-300 items-center justify-center">
+            <div class="text-center">
+              <div class="w-24 h-16 mx-auto mb-2 bg-gray-400 flex items-center justify-center">
+                <span class="text-white font-semibold text-xs">IMAGE</span>
+              </div>
+              <p data-i18n="about.product.name2" class="text-sm font-semibold text-gray-600">Blank Box</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="mb-2">
+            <span data-i18n="about.product.highlight2" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Luxury Grade</span>
+          </div>
+          <h3 data-i18n="about.product.name2" class="text-xl font-bold text-brand-navy mb-4">Blank Box</h3>
+          <p data-i18n="about.product.caption2" class="text-brand-navy/70 mb-4 leading-relaxed text-sm">
+            High-quality plain carton boxes for general packaging needs. Strong, reliable, and perfect for storage, shipping, or custom branding.
+          </p>
+        </div>
+      </div>
+
+      <!-- Printed Carton Box -->
+      <div class="bg-white border border-gray-200 overflow-hidden transform hover:-translate-y-2 transition-all duration-500 group h-96 flex flex-col">
+        <div class="bg-brand-navy h-48 flex items-center justify-center relative overflow-hidden">
+          <img src="assets/product3.png" 
+               alt="Printed Carton Box" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="hidden w-full h-full bg-gray-300 items-center justify-center">
+            <div class="text-center">
+              <div class="w-24 h-16 mx-auto mb-2 bg-gray-400 flex items-center justify-center">
+                <span class="text-white font-semibold text-xs">IMAGE</span>
+              </div>
+              <p data-i18n="about.product.name3" class="text-sm font-semibold text-gray-600">Printed Carton Box</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="mb-2">
+            <span data-i18n="about.product.highlight3" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Custom Design</span>
+          </div>
+          <h3 data-i18n="about.product.name3" class="text-xl font-bold text-brand-navy mb-4">Printed Carton Box</h3>
+          <p data-i18n="about.product.caption3" class="text-brand-navy/70 mb-4 leading-relaxed text-sm">
+            Custom-printed carton boxes that elevate your brand. Vibrant, precise printing on sturdy corrugated material—perfect for retail and e-commerce packaging.
+          </p>
+        </div>
+      </div>
+
+      <!-- Die-Cut Carton Box -->
+      <div class="bg-white border border-gray-200 overflow-hidden transform hover:-translate-y-2 transition-all duration-500 group h-96 flex flex-col">
+        <div class="bg-brand-navy h-48 flex items-center justify-center relative overflow-hidden">
+          <img src="assets/product3.png" 
+               alt="Die-Cut Carton Box" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="hidden w-full h-full bg-gray-300 items-center justify-center">
+            <div class="text-center">
+              <div class="w-24 h-16 mx-auto mb-2 bg-gray-400 flex items-center justify-center">
+                <span class="text-white font-semibold text-xs">IMAGE</span>
+              </div>
+              <p data-i18n="about.product.name4" class="text-sm font-semibold text-gray-600">Die-Cut Carton Box</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="mb-2">
+            <span data-i18n="about.product.highlight4" class="text-sm font-semibold text-brand-orange uppercase tracking-wider">Precision Cut</span>
+          </div>
+          <h3 data-i18n="about.product.name4" class="text-xl font-bold text-brand-navy mb-4">Die-Cut Carton Box</h3>
+          <p data-i18n="about.product.caption4" class="text-brand-navy/70 mb-4 leading-relaxed text-sm">
+            Precision-engineered die cut boxes tailored to your product's shape and structure. Functional, sleek, and ready to impress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .fade-in-up-observer {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+
+  .fade-in-up-observer.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.fade-in-up-observer');
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
+
+<section class="py-20 bg-gradient-to-br from-white to-brand-cream">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text Section (Left) -->
+      <div class="space-y-6">
+        <h2 data-i18n="about.location.title" class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Our Location</h2>
+        <h2 class="text-3xl md:text-4xl text-brand-navy mb-4">Hyundai Industrial Park, Cikarang, Bekasi</h2>
+        <p data-i18n="about.location.caption" class="text-lg text-brand-navy/70">
+          Serving clients across Jabodetabek, West Java, and throughout Indonesia.
+        </p>
+      </div>
+
+      <!-- Google Maps Embed (Right) -->
+      <div class="w-full h-80 md:h-96 rounded-lg overflow-hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.415871893559!2d107.134355474488!3d-6.340147662031232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699a4ff941386d%3A0x8c39a754172fc174!2sRapipack%20Asritama%20Pt.%2C%20Jl.%20Raya%20Inti%20Blok%20C10%20No.3A%2C%20Cibatu%2C%20Cikarang%20Sel.%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat%2017530!5e0!3m2!1sen!2sid!4v1753691301085!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer Section -->
+  <footer class="bg-brand-navy text-white py-12 text-center">
+    <p>&copy; PT. Rapipack Asritama | Part of SCG Packaging</p>
+  </footer>
+
+</body>
+
+  <!-- Translations -->
+<script>
+(() => {
+  const DEFAULT_LANG = 'en';
+  let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+
+  // 1) Translations library (keep/edit here in your page)
+  const t = {
+    en: {
+      'nav.home':'Home','nav.about':'About','nav.products':'Products','nav.certification':'Certification','nav.technology':'Technology','nav.contact':'Contact',
+      'about.hero.explore':'Explore Products','about.hero.learn':'Learn More',
+      'about.hero.title': `PT. Rapipack Asritama is one of Indonesia’s leading manufacturers of corrugated carton packaging. Established in 1996, we are built on trust, innovation, and a strong commitment to quality and customer satisfaction.`,
+      'about.product.title': `Our <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Products</span>`,
+      'about.product.caption': `From premium shipping solutions to cutting-edge custom packaging, we deliver excellence across our comprehensive product range.`,
+      'about.product.highlight1': 'Premium Quality','about.product.name1':'Sheet Board','about.product.caption1':'Durable and versatile corrugated sheet boards available in various sizes and thicknesses — ideal for custom packaging, inserts, and protective layers.',
+      'about.product.highlight2': 'Top-Grade','about.product.name2':'Blank Box','about.product.caption2':'High-quality plain carton boxes for general packaging needs. Strong, reliable, and perfect for storage, shipping, or custom branding.',
+      'about.product.highlight3': 'Custom Design','about.product.name3':'Printed Carton Box','about.product.caption3':'Custom-printed carton boxes that elevate your brand. Vibrant, precise printing on sturdy corrugated material—perfect for retail and e-commerce packaging.',
+      'about.product.highlight4': 'Precision Cut','about.product.name4':'Die-Cut Carton Box','about.product.caption4':'Precision-engineered die cut boxes tailored to your product\'s shape and structure. Functional, sleek, and ready to impress.',
+      'about.location.title' : 'Our Location', 'about.location.caption' : 'Serving clients all across Jababeka, West Java, and Indonesia'
+    },
+    id: {
+      'nav.home':'Beranda','nav.about':'Tentang','nav.products':'Produk','nav.certification':'Sertifikasi','nav.technology':'Teknologi','nav.contact':'Kontak',
+      'about.hero.explore':'Lihat Produk','about.hero.learn':'Pelajari Lebih Lanjut',
+      'about.hero.title': `PT. Rapipack Asritama adalah salah satu produsen karton bergelombang terkemuka di Indonesia. Berdiri sejak 1996, kami tumbuh dengan kepercayaan, inovasi, dan komitmen kuat pada kualitas serta kepuasan pelanggan.`,
+      'about.product.title': `Produk <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Kami</span>`,
+      'about.product.caption': `Dari solusi pengiriman premium hingga kemasan kustom terkini, kami menghadirkan keunggulan di seluruh lini produk.`,
+      'about.product.highlight1': 'Kualitas Premium','about.product.name1':'Sheet Board','about.product.caption1':'Lembaran karton bergelombang yang kuat dan serbaguna dalam berbagai ukuran dan ketebalan — ideal untuk kemasan kustom, sisipan, dan lapisan pelindung.',
+      'about.product.highlight2': 'Top-Grade','about.product.name2':'Karton Polos','about.product.caption2':'Karton polos berkualitas tinggi untuk kebutuhan kemasan umum. Kokoh, andal, dan cocok untuk penyimpanan, pengiriman, atau branding kustom.',
+      'about.product.highlight3': 'Desain Kustom','about.product.name3':'Karton Cetak','about.product.caption3':'Karton cetak kustom untuk memperkuat citra brand Anda, dengan warna tajam di material corrugated yang kokoh—ideal untuk ritel dan e-commerce.',
+      'about.product.highlight4': 'Potongan Presisi','about.product.name4':'Karton Die-Cut','about.product.caption4':'Karton die‑cut berpresisi yang disesuaikan dengan bentuk dan struktur produk Anda. Fungsional dan menawan.',
+      'about.location.title' : 'Lokasi Kami', 'about.location.caption' : 'Melayani pelanggan dari Jababeka, Jawa Barat, hingga seluruh Indonesia'
+    },
+    zh: {
+      'nav.home':'首页','nav.about':'关于','nav.products':'产品','nav.certification':'认证','nav.technology':'技术','nav.contact':'联系',
+      'about.hero.explore':'浏览产品','about.hero.learn':'了解更多',
+      'about.hero.title': `PT. Rapipack Asritama 是印尼领先的瓦楞纸箱制造商之一。自 1996 年成立以来，我们以信任、创新与高品质承诺赢得客户满意。`,
+      'about.product.title': `我们的 <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">产品</span>`,
+      'about.product.caption': `从高端运输解决方案到前沿定制包装，我们在全线产品中追求卓越。`,
+      'about.product.highlight1': '优质等级','about.product.name1':'纸板片','about.product.caption1':'耐用多用途的瓦楞纸板，提供多种尺寸与厚度——非常适合定制包装、内衬与保护层。',
+      'about.product.highlight2': '高端等级','about.product.name2':'素色纸箱','about.product.caption2':'高品质素色纸箱，适用于通用包装。坚固可靠，适合仓储、运输或品牌定制。',
+      'about.product.highlight3': '定制设计','about.product.name3':'印刷纸箱','about.product.caption3':'定制印刷纸箱提升品牌形象。色彩鲜明、印刷精细且结构坚固——适合零售与电商。',
+      'about.product.highlight4': '精密开模','about.product.name4':'模切纸箱','about.product.caption4':'按产品外形量身定制的模切纸箱。功能实用，外观利落。',
+      'about.location.title': '我们的地点', 'about.location.caption': '服务遍及Jababeka、西爪哇及印尼各地'
+    }
+  };
+
+  // 2) Swap texts for all [data-i18n] (supports HTML)
+  function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t[currentLang]?.[key];
+      if (typeof val === 'string') el.innerHTML = val;
+    });
+    // highlight active lang button if present
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const active = btn.dataset.lang === currentLang;
+      btn.classList.toggle('ring-2', active);
+      btn.classList.toggle('ring-brand-blue', active);
+    });
+  }
+
+  // 3) Change language (persist to localStorage)
+  function setLang(lang) {
+    if (!t[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    applyTranslations();
+  }
+
+  // 4) Load navbar.html, then wire the 3 buttons
+  async function loadNavbar() {
+    const host = document.getElementById('navbar-container');
+    if (!host) return;
+    const res = await fetch('navbar.html', { cache: 'no-cache' });
+    host.innerHTML = await res.text();
+
+    // Event delegation: handle clicks on EN/ID/中文 buttons
+    host.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-btn');
+      if (btn && btn.dataset.lang) setLang(btn.dataset.lang);
+    });
+
+    // After navbar is in the DOM, apply current language to nav labels
+    applyTranslations();
+  }
+
+  // 5) Init
+  window.addEventListener('DOMContentLoaded', async () => {
+    await loadNavbar();
+    applyTranslations(); // translate rest of the page content
+  });
+})();
+</script>
+</html>

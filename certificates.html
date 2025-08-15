@@ -96,13 +96,13 @@
         <div class="absolute inset-0 bg-overlay2 z-10"></div>
 
     <div class="container mx-auto px-6 text-center relative z-10">
-        <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+        <h1 data-i18n="certi.hero.title" class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
             Our 
             <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">
                 Certification
             </span>
         </h1>
-        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p data-i18n="certi.hero.caption" class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
             Recognized by trusted certifications, we uphold the highest standards to deliver exceptional quality in every product.
         </p>
        
@@ -149,13 +149,12 @@
               <h3
                 class="text-xl font-bold text-brand-navy mb-3 transition-colors ease-in-out duration-500 group-hover:text-brand-navy group-hover:drop-shadow-lg">
                 ISO 9001:2015 Quality Management</h3>
-              <p
-                class="text-gray-600 leading-relaxed text-base mb-4 transition-colors ease-in-out duration-500 group-hover:text-gray-600 group-hover:drop-shadow-md">
+              <p data-i18n="certi.content.certi1" class="text-gray-600 leading-relaxed text-base mb-4 transition-colors ease-in-out duration-500 group-hover:text-gray-600 group-hover:drop-shadow-md">
                 Achieved ISO 9001:2015 certification in packaging solutions. Our commitment to quality management ensures that our products meet the highest industry standards for consistency and reliability.
               </p>
             </div>
             <div class="flex items-center">
-              <span
+              <span data-i18n="certi.content.certified"
                 class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 transition-colors ease-in-out duration-500 group-hover:bg-green-500 group-hover:text-white">
                 Certified
               </span>
@@ -194,13 +193,13 @@
               <h3
                 class="text-xl font-bold text-brand-navy mb-3 transition-colors ease-in-out duration-500 group-hover:text-brand-navy group-hover:drop-shadow-lg">
                 ISO 45001:2018 Health and Safety Management</h3>
-              <p
+              <p data-i18n="certi.content.certi2"
                 class="text-gray-600 leading-relaxed text-base mb-4 transition-colors ease-in-out duration-500 group-hover:text-gray-600 group-hover:drop-shadow-md">
                 Our ISO 45001:2018 certification ensures a proactive approach to occupational health and safety, creating safer working environments and reducing workplace risks.
               </p>
             </div>
             <div class="flex items-center">
-              <span
+              <span data-i18n="certi.content.certified"
                 class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 transition-colors ease-in-out duration-500 group-hover:bg-green-500 group-hover:text-white">
                 Certified
               </span>
@@ -239,13 +238,14 @@
               <h3
                 class="text-xl font-bold text-brand-navy mb-3 transition-colors ease-in-out duration-500 group-hover:text-brand-navy group-hover:drop-shadow-lg">
                 FSC Certified</h3>
-              <p
+              <p data-i18n="certi.content.certi3"
                 class="text-gray-600 leading-relaxed text-base mb-4 transition-colors ease-in-out duration-500 group-hover:text-gray-600 group-hover:drop-shadow-md">
                 Our FSC certification guarantees that our packaging materials are sourced from responsibly managed forests, supporting biodiversity and sustainable forestry practices.
               </p>
             </div>
             <div class="flex items-center">
               <span
+              data-i18n="certi.content.certified"
                 class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 transition-colors ease-in-out duration-500 group-hover:bg-green-500 group-hover:text-white">
                 Certified
               </span>
@@ -285,12 +285,14 @@
                 class="text-xl font-bold text-brand-navy mb-3 transition-colors ease-in-out duration-500 group-hover:text-brand-navy group-hover:drop-shadow-lg">
                 Member of Sedex Group</h3>
               <p
+              data-i18n="certi.content.certi4"
                 class="text-gray-600 leading-relaxed text-base mb-4 transition-colors ease-in-out duration-500 group-hover:text-gray-600 group-hover:drop-shadow-md">
                 As a Sedex member, we are committed to ethical business practices, transparency, and continuous improvement in labor rights, health and safety, and environmental performance.
               </p>
             </div>
             <div class="flex items-center">
               <span
+              data-i18n="certi.content.certified"
                 class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 transition-colors ease-in-out duration-500 group-hover:bg-green-500 group-hover:text-white">
                 Certified
               </span>
@@ -311,4 +313,101 @@
   </footer>
 
 </body>
+  <script>
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in-up-observer');
+      fadeElements.forEach(el => observer.observe(el));
+    });
+
+    // Translations
+    (() => {
+      const DEFAULT_LANG = 'en';
+      let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+
+const t = {
+  en: {
+    'certi.hero.title': 'Our Certification',
+    'certi.hero.caption': 'Recognized by trusted certifications, we uphold the highest standards to deliver exceptional quality in every product.',
+    'certi.content.certi1': 'Achieved ISO 9001:2015 certification in packaging solutions. Our commitment to quality management ensures that our products meet the highest industry standards for consistency and reliability.',
+    'certi.content.certi2': 'Our ISO 45001:2018 certification ensures a proactive approach to occupational health and safety, creating safer working environments and reducing workplace risks.',
+    'certi.content.certi3': 'Our FSC certification guarantees that our packaging materials are sourced from responsibly managed forests, supporting biodiversity and sustainable forestry practices.',
+    'certi.content.certi4': 'As a Sedex member, we are committed to ethical business practices, transparency, and continuous improvement in labor rights, health and safety, and environmental performance.',
+    'certi.content.certified': 'Certified'
+  },
+  id: {
+    'certi.hero.title': 'Sertifikasi Kami',
+    'certi.hero.caption': 'Diakui dengan sertifikasi yang terpercaya, kami menjunjung tinggi standar tertinggi untuk memberikan kualitas luar biasa di setiap produk.',
+    'certi.content.certi1': 'Mencapai sertifikasi ISO 9001:2015 dalam solusi kemasan. Komitmen kami terhadap manajemen kualitas memastikan bahwa produk kami memenuhi standar industri tertinggi untuk konsistensi dan keandalan.',
+    'certi.content.certi2': 'Sertifikasi ISO 45001:2018 kami memastikan pendekatan proaktif terhadap kesehatan dan keselamatan kerja, menciptakan lingkungan kerja yang lebih aman dan mengurangi risiko di tempat kerja.',
+    'certi.content.certi3': 'Sertifikasi FSC kami menjamin bahwa bahan kemasan kami bersumber dari hutan yang dikelola secara bertanggung jawab, mendukung keanekaragaman hayati dan praktik kehutanan berkelanjutan.',
+    'certi.content.certi4': 'Sebagai anggota Sedex, kami berkomitmen pada praktik bisnis yang etis, transparansi, dan perbaikan berkelanjutan dalam hak tenaga kerja, kesehatan dan keselamatan, serta kinerja lingkungan.',
+    'certi.content.certified': 'Tersertifikasi'
+  },
+  zh: {
+    'certi.hero.title': '我们的认证',
+    'certi.hero.caption': '通过受信任的认证，我们秉持最高标准，在每一款产品中提供卓越品质。',
+    'certi.content.certi1': '获得ISO 9001:2015认证的包装解决方案。我们对质量管理的承诺确保我们的产品达到行业的最高标准，以保持一致性和可靠性。',
+    'certi.content.certi2': '我们的ISO 45001:2018认证确保了在职业健康和安全方面采取积极主动的方式，创造更安全的工作环境，减少工作场所风险。',
+    'certi.content.certi3': '我们的FSC认证保证我们的包装材料来自负责任管理的森林，支持生物多样性和可持续的林业实践。',
+    'certi.content.certi4': '作为Sedex成员，我们承诺遵守道德商业实践，透明度，并在劳工权利、健康与安全以及环境表现方面不断改进。',
+    'certi.content.certified': '已认证'
+  }
+};
+
+      function applyTranslations() {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const val = t[currentLang]?.[key];
+          if (typeof val === 'string') el.innerHTML = val;
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          const active = btn.dataset.lang === currentLang;
+          btn.classList.toggle('ring-2', active);
+          btn.classList.toggle('ring-brand-blue', active);
+        });
+      }
+
+      function setLang(lang) {
+        if (!t[lang]) return;
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        applyTranslations();
+      }
+
+      async function loadNavbar() {
+        const host = document.getElementById('navbar-container');
+        if (!host) return;
+        const res = await fetch('navbar.html', { cache: 'no-cache' });
+        host.innerHTML = await res.text();
+
+        host.addEventListener('click', (e) => {
+          const btn = e.target.closest('.lang-btn');
+          if (btn && btn.dataset.lang) setLang(btn.dataset.lang);
+        });
+
+        applyTranslations();
+      }
+
+      window.addEventListener('DOMContentLoaded', async () => {
+        await loadNavbar();
+        applyTranslations();
+      });
+    })();
+  </script>
+
 </html>

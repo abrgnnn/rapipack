@@ -256,7 +256,7 @@
                             <p data-i18n="aboutus.journey.yearcapt2" class="text-brand-navy/70">Began full production of corrugated packaging products, marking the start of our manufacturing journey.</p>
                         </div>
                     </div>
-                    gik
+                 
                     <!-- 2015 -->
                     <div class="timeline-item flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 md:pr-8 text-center md:text-right">
@@ -295,18 +295,18 @@
 <section class="py-16 bg-gradient-to-r from-brand-navy to-slate-800">
   <div class="container mx-auto px-6">
     <div class="text-center mb-12">
-      <h2 data-i18n="aboutus.values.title" class="text-4xl font-bold text-brand-cream mb-4">Our Core Values</h2>
-      <p data-i18n="aboutus.values.subtitle" class="text-brand-cream/70 text-lg">The principles that guide everything we do</p>
+      <h2 data-i18n="aboutus.values.title" class="text-4xl sm:text-3xl md:text-4xl font-bold text-brand-cream mb-4">Our Core Values</h2>
+      <p data-i18n="aboutus.values.subtitle" class="text-brand-cream/70 text-lg sm:text-base md:text-lg">The principles that guide everything we do</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+    <div class="grid grid-cols-5 gap-8">
       <!-- Relationship -->
       <div class="text-center group">
         <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
           <span class="text-3xl font-bold text-white">R</span>
         </div>
-        <h3 class="text-xl font-bold text-brand-cream mb-3">Relationship</h3>
-        <p data-i18n="aboutus.values.capt1" class="text-brand-cream/70">Building healthy relationships through mutual support and coordination among all stakeholders.</p>
+        <h3 class="text-xl sm:text-lg md:text-xl font-bold text-brand-cream mb-3">Relationship</h3>
+        <p data-i18n="aboutus.values.capt1" class="text-brand-cream/70 text-sm sm:text-xs md:text-sm">Building healthy relationships through mutual support and coordination among all stakeholders.</p>
       </div>
 
       <!-- Achievement -->
@@ -314,8 +314,8 @@
         <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
           <span class="text-3xl font-bold text-white">A</span>
         </div>
-        <h3 class="text-xl font-bold text-brand-cream mb-3">Achievement</h3>
-        <p data-i18n="aboutus.values.capt2" class="text-brand-cream/70">Work achievements are a shared responsibility and are meant to be enjoyed collectively by all stakeholders.</p>
+        <h3 class="text-xl sm:text-lg md:text-xl font-bold text-brand-cream mb-3">Achievement</h3>
+        <p data-i18n="aboutus.values.capt2" class="text-brand-cream/70 text-sm sm:text-xs md:text-sm">Work achievements are a shared responsibility and are meant to be enjoyed collectively by all stakeholders.</p>
       </div>
 
       <!-- Priority -->
@@ -323,8 +323,8 @@
         <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
           <span class="text-3xl font-bold text-white">P</span>
         </div>
-        <h3 class="text-xl font-bold text-brand-cream mb-3">Priority</h3>
-        <p data-i18n="aboutus.values.capt3" class="text-brand-cream/70">Focusing on what's important rather than just what's urgent.</p>
+        <h3 class="text-xl sm:text-lg md:text-xl font-bold text-brand-cream mb-3">Priority</h3>
+        <p data-i18n="aboutus.values.capt3" class="text-brand-cream/70 text-sm sm:text-xs md:text-sm">Focusing on what's important rather than just what's urgent.</p>
       </div>
 
       <!-- Innovation -->
@@ -332,8 +332,8 @@
         <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
           <span class="text-3xl font-bold text-white">I</span>
         </div>
-        <h3 class="text-xl font-bold text-brand-cream mb-3">Innovation</h3>
-        <p data-i18n="aboutus.values.capt4" class="text-brand-cream/70">Being courageous and adaptable—embracing change with innovative solutions that align with the times.</p>
+        <h3 class="text-xl sm:text-lg md:text-xl font-bold text-brand-cream mb-3">Innovation</h3>
+        <p data-i18n="aboutus.values.capt4" class="text-brand-cream/70 text-sm sm:text-xs md:text-sm">Being courageous and adaptable—embracing change with innovative solutions that align with the times.</p>
       </div>
 
       <!-- Integrity -->
@@ -341,12 +341,13 @@
         <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
           <span class="text-3xl font-bold text-white">I</span>
         </div>
-        <h3 class="text-xl font-bold text-brand-cream mb-3">Integrity</h3>
-        <p data-i18n="aboutus.values.capt5" class="text-brand-cream/70">Taking responsibility and maintaining zero tolerance for misconduct or compromise on ethics.</p>
+        <h3 class="text-xl sm:text-lg md:text-xl font-bold text-brand-cream mb-3">Integrity</h3>
+        <p data-i18n="aboutus.values.capt5" class="text-brand-cream/70 text-sm sm:text-xs md:text-sm">Taking responsibility and maintaining zero tolerance for misconduct or compromise on ethics.</p>
       </div>
     </div>
   </div>
 </section>
+
 
 
  
@@ -363,7 +364,7 @@
       const DEFAULT_LANG = 'en';
   let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
 
-  const t = {
+const t = {
   en: {
     // HERO
     'aboutus.hero.title': `About <span class="text-transparent bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text">Our Story</span>`,
@@ -392,12 +393,12 @@
     'aboutus.journey.subtitle': `From humble beginnings to industry leadership - discover the milestones that shaped our company`,
     'aboutus.journey.yeartitle1': `Company Founded`,
     'aboutus.journey.yearcapt1': `Started as a small family business with a vision to revolutionize packaging solutions.`,
-    'aboutus.journey.yeartitle2': `International Expansion`,
-    'aboutus.journey.yearcapt2': `Expanded operations globally, serving clients across 15 countries.`,
+    'aboutus.journey.yeartitle2': `Start of Operations`,
+    'aboutus.journey.yearcapt2': `Began full production of corrugated packaging products, marking the start of our manufacturing journey.`,
     'aboutus.journey.yeartitle3': `Sustainability Initiative`,
     'aboutus.journey.yearcapt3': `Launched our green packaging program, reducing environmental impact by 60%.`,
-    'aboutus.journey.yeartitle4': `Innovation Lab`,
-    'aboutus.journey.yearcapt4': `Established R&D facility focusing on smart packaging and biodegradable materials.`,
+    'aboutus.journey.yeartitle4': `Acquired by SCG`,
+    'aboutus.journey.yearcapt4': `Joined the SCG Packaging group, gaining new resources and opportunities for growth.`,
 
     // VALUES
     'aboutus.values.title': `Our Core Values`,
@@ -442,26 +443,26 @@
     'aboutus.journey.subtitle': `Dari awal yang sederhana menuju kepemimpinan industri — jelajahi tonggak yang membentuk perusahaan kami`,
     'aboutus.journey.yeartitle1': `Perusahaan Didirikan`,
     'aboutus.journey.yearcapt1': `Dimulai sebagai bisnis keluarga kecil dengan visi merevolusi solusi kemasan.`,
-    'aboutus.journey.yeartitle2': `Ekspansi Internasional`,
-    'aboutus.journey.yearcapt2': `Memperluas operasi secara global, melayani klien di 15 negara.`,
+    'aboutus.journey.yeartitle2': `Ekspansi Operasional`,
+    'aboutus.journey.yearcapt2': `Memulai produksi penuh produk kemasan bergelombang, menandai awal perjalanan manufaktur kami.`,
     'aboutus.journey.yeartitle3': `Inisiatif Keberlanjutan`,
     'aboutus.journey.yearcapt3': `Meluncurkan program kemasan hijau, mengurangi dampak lingkungan hingga 60%.`,
-    'aboutus.journey.yeartitle4': `Laboratorium Inovasi`,
-    'aboutus.journey.yearcapt4': `Mendirikan fasilitas R&D berfokus pada kemasan cerdas dan material biodegradable.`,
+    'aboutus.journey.yeartitle4': `Diakuisisi oleh SCG`,
+    'aboutus.journey.yearcapt4': `Bergabung dengan grup SCG Packaging, memperoleh sumber daya dan peluang untuk pertumbuhan.`,
 
     // VALUES
     'aboutus.values.title': `Nilai Inti Kami`,
     'aboutus.values.subtitle': `Prinsip-prinsip yang menuntun setiap langkah kami`,
-    'aboutus.values.title1': `Relasi`,
-    'aboutus.values.capt1': `Membangun relasi yang sehat melalui saling dukung dan koordinasi di antara seluruh pemangku kepentingan.`,
-    'aboutus.values.title2': `Pencapaian`,
-    'aboutus.values.capt2': `Pencapaian kerja adalah tanggung jawab bersama dan dinikmati secara kolektif oleh seluruh pemangku kepentingan.`,
-    'aboutus.values.title3': `Prioritas`,
+    'aboutus.values.title1': `Relationship`,
+    'aboutus.values.capt1': `Hubungan yang sehat, saling mendukung, terkoordinasi antar pemangku kepentingan.`,
+    'aboutus.values.title2': `Achievement`,
+    'aboutus.values.capt2': `Prestasi kerja menjadi tanggung jawab bersama dan dapat dinikmati seluruh pemangku kepentingan.`,
+    'aboutus.values.title3': `Priority`,
     'aboutus.values.capt3': `Berfokus pada hal yang penting, bukan sekadar yang mendesak.`,
-    'aboutus.values.title4': `Inovasi`,
-    'aboutus.values.capt4': `Berani dan adaptif—menghadapi perubahan dengan solusi inovatif yang relevan dengan perkembangan zaman.`,
-    'aboutus.values.title5': `Integritas`,
-    'aboutus.values.capt5': `Bertanggung jawab dan tegas pada toleransi nol terhadap pelanggaran atau kompromi etika.`
+    'aboutus.values.title4': `Innovation`,
+    'aboutus.values.capt4': `Berani berubah dan mampu mengikuti perkembangan zaman dengan solusi yang inovatif.`,
+    'aboutus.values.title5': `Integrity`,
+    'aboutus.values.capt5': `Berani bertanggung jawab dan tidak kompromi terhadap penyimpangan.`
   },
 
   zh: {
@@ -514,6 +515,7 @@
     'aboutus.values.capt5': `敢于负责，对不当行为与道德妥协零容忍。`
   }
 };
+
   // 2) Swap texts for all [data-i18n] (supports HTML)
   function applyTranslations() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
